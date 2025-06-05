@@ -1,0 +1,204 @@
+import os
+import re
+import json
+import pickle
+from flask import Flask, request, jsonify
+from datetime import datetime
+from flask_cors import CORS
+from chatbot_embeddings import (
+    get_most_relevant_chunk,
+    summarize_candidate_topic,
+    detect_topic_from_query,
+    summarize_topic_with_gpt,
+    summarize_topic_by_candidate,
+    classify_policy_stance,
+    aliases,
+    df
+)
+
+app = Flask(__name__)
+CORS(app)
+
+# Load topic chunks
+with open("topic_chunks.json", "r") as f:
+    topic_chunks = json.load(f)
+
+# Load stance cache
+with open("stance_cache_gst.json", "r") as f:
+    gst_stance_cache = json.load(f)
+
+# General topic cache
+cache_file = "topic_response_cache.json"
+if os.path.exists(cache_file):
+    with open(cache_file, "r") as f:
+        topic_response_cache = json.load(f)
+else:
+    topic_response_cache = {}
+
+# Log queries
+def log_query(query, response):
+    log_entry = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "query": query,
+        "response": response
+    }
+    try:
+        if os.path.exists("query_log.json"):
+            with open("query_log.json", "r") as f:
+                logs = json.load(f)
+        else:
+            logs = []
+        logs.insert(0, log_entry)
+        with open("query_log.json", "w") as f:
+            json.dump(logs, f, indent=2)
+    except Exception as e:
+        print(f"⚠️ Logging failed: {e}")
+
+# Save updated topic cache
+def save_topic_cache():
+    with open(cache_file, "w") as f:
+        json.dump(topic_response_cache, f, indent=2)
+
+# Regex for stance-type queries
+stance_pattern = re.compile(
+    r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?)\s+(.*)",
+    re.IGNORECASE
+)
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    try:
+        data = request.get_json()
+        query = data.get("query", "")
+        print(f"Received query: {query}")
+
+        cleaned_query = re.sub(r"[^\w\s]", "", query.lower())
+        print(f"\U0001F527 Cleaned query: {cleaned_query}")
+
+        stance_match = stance_pattern.search(cleaned_query)
+
+        if stance_match:
+            topic = detect_topic_from_query(stance_match.group(3), aliases)
+            print(f"\U0001F4DA Detected general topic: {topic}")
+    
+            position_keywords = [stance_match.group(2).lower()] + query.lower().split()
+            print(f"\U0001F50D Searching for stance on: {topic}")
+            print(f"\U0001F511 Position keywords: {position_keywords}")
+
+            # Special handling for GST using cache
+            if topic == "gst":
+                stance_keyword = stance_match.group(2).lower()
+                if "support" in stance_keyword:
+                    filtered = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
+                elif "oppose" in stance_keyword:
+                    filtered = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
+                else:
+                    filtered = gst_stance_cache  # fallback
+
+                if not filtered:
+                    return jsonify({"response": "No clear stances found on GST."})
+
+                supporters = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
+                opposers = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
+
+                primary_group = supporters if "support" in stance_keyword else opposers
+                alternate_group = opposers if "support" in stance_keyword else supporters
+
+                primary_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in primary_group)
+                alternate_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in alternate_group)
+
+                return jsonify({"response": {
+                    "primary": primary_summary,
+                    "alternate": alternate_summary
+                }})
+            
+
+        summary_keywords = [
+    "what do candidates say", "how do candidates view",
+    "what are the candidates", "what is said about",
+    "what are the views on", "tell me about", "views on", "summary of",
+    "what do they think", "what do they believe", "what is their position",
+    "what do they say", "how do they feel about"
+    ]
+
+        if any(phrase in cleaned_query for phrase in summary_keywords):
+            topic = detect_topic_from_query(cleaned_query, aliases)
+            print(f"\U0001F4DA Detected general topic: {topic}")
+
+            if topic in topic_response_cache:
+                print("⚡ Using cached response")
+                return jsonify({"response": topic_response_cache[topic]})
+
+            chunks = topic_chunks.get(topic, [])
+            if not chunks:
+                return jsonify({"response": f"No information found on {topic}."})
+
+            response = summarize_topic_by_candidate(topic, chunks)
+            topic_response_cache[topic] = response
+            save_topic_cache()
+            return jsonify({"response": response})
+            
+
+        if "what does" in cleaned_query and "say about" in cleaned_query:
+            parts = cleaned_query.split("say about")
+            candidate_name = parts[0].replace("what does", "").strip()
+            topic = parts[1].strip()
+            print(f"\U0001F501 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
+
+            response = summarize_candidate_topic(candidate_name, topic, df)
+            log_query(query, response)
+            return jsonify({"response": response})
+           
+
+        # ----- Candidate-specific topic queries -----
+        candidate_topic_match = re.search(
+            r"(?:what does|where does|tell me what)\s+([\w\s\-']+?)\s+(?:say|think|stand).*?\b(on|about)?\b\s+([\w\s\-']+)",
+            cleaned_query
+        )
+
+        if candidate_topic_match:
+            candidate_name = candidate_topic_match.group(1).strip()
+            topic = detect_topic_from_query(candidate_topic_match.group(3).strip(), aliases)
+            print(f"\U0001F9D1‍\U0001F4BC Candidate detected: {candidate_name} | \U0001F9F5 Topic detected: {topic}")
+
+            chunks = topic_chunks.get(topic, [])
+
+            # Search for candidate-specific info
+            for chunk in chunks:
+                if chunk["name"].lower() == candidate_name.lower():
+                    response = f"{chunk['name']} on {topic}:\n\n{chunk['text']}"
+                    log_query(query, response)
+                    return jsonify({"response": response})
+                    
+
+            return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
+            
+            
+        print("\U0001F198 Unrecognized query format. Returning default message.")
+        return jsonify({"response": "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"})
+        
+        
+    except Exception as e:
+        print(f"❌ Error processing request: {e}")
+        return jsonify({"response": f"An error occurred: {e}"}), 500
+       
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

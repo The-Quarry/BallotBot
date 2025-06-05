@@ -1,0 +1,8 @@
+flask
+openai
+pandas
+scikit-learn
+flask-cors
+streamlit
+requests
+reportlab
