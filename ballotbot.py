@@ -162,7 +162,7 @@ for query, result in st.session_state.chat_history:
     if result is not None:
         with st.chat_message("user"):
             st.markdown(query)
-        with st.chat_message("BallotBot", avatar="BallotBoticon.png"):
+        with st.chat_message("BallotBot", avatar="ballotbot_logo.png"):
             if isinstance(result, dict) and "primary" in result:
                 st.markdown(result["primary"])
                 with st.expander("💡 See what those opposed say"):
