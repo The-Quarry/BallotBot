@@ -89,7 +89,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Sidebar Branding ---
-st.sidebar.image("BallotBoticon.png", use_container_width=True)
+st.sidebar.image("ballotbot_logo.png", use_container_width=True)
 st.sidebar.title("🗳️ BallotBot")
 st.sidebar.markdown("""
 Overwhelmed by the mountain of campaign material in the **2025 Guernsey General Election**? We are here to help.
