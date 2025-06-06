@@ -10,6 +10,13 @@ import uuid
 import re
 
 st.set_page_config(page_title="BallotBot - Guernsey Election 2025", layout="wide")
+st.markdown("""
+    <style>
+        .main {
+            padding-top: 3rem !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # --- Utility to create safe, unique keys ---
 def make_safe_key(*parts):
