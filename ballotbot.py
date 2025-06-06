@@ -10,6 +10,7 @@ import uuid
 import re
 
 st.set_page_config(page_title="BallotBot - Guernsey Election 2025", layout="wide")
+st.sidebar.markdown("<style>.css-1vq4p4l {visibility: visible !important;}</style>", unsafe_allow_html=True)
 st.markdown("""
     <style>
         .main {
