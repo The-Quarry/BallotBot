@@ -105,7 +105,7 @@ BallotBot uses candidate manifestos, podcasts, hustings and more. They were buil
 # --- Header ---
 st.title("BallotBot - Election 2025")
 
-API_URL = "https://ballotbot.onrender.com"
+API_URL = "https://ballotbot.onrender.com/chat"
 
 # --- Suggested prompts ---
 suggested_prompts = [
