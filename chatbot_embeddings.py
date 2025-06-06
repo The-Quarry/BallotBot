@@ -18,8 +18,7 @@ def ensure_nltk():
         nltk.download('punkt')
 
 # --- Load embeddings data ---
-@staticmethod
-@st.cache_resource
+
 def load_embeddings():
     with open("embeddings.pkl", "rb") as f:
         df = pickle.load(f)
