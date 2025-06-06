@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ballotbot-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        value: 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
