@@ -8,7 +8,7 @@ from nltk.tokenize import sent_tokenize
 from topics import aliases
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # --- Utility to ensure NLTK punkt tokenizer is available ---
 def ensure_nltk():
