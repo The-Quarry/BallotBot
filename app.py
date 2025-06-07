@@ -36,21 +36,29 @@ else:
     topic_response_cache = {}
 
 # Log queries
-def log_query(query, response):
+def log_query_console(query, response, matched_topic=None, response_type="info"):
     log_entry = {
         "timestamp": datetime.utcnow().isoformat(),
         "query": query,
-        "response": response
+        "response": str(response)[:300],  # truncate long responses
+        "topic": matched_topic or "unknown",
+        "type": response_type
     }
+
+    print(json.dumps(log_entry))  # This logs to Render's console
+
     try:
         if os.path.exists("query_log.json"):
             with open("query_log.json", "r") as f:
                 logs = json.load(f)
         else:
             logs = []
+
         logs.insert(0, log_entry)
+
         with open("query_log.json", "w") as f:
             json.dump(logs, f, indent=2)
+
     except Exception as e:
         print(f"⚠️ Logging failed: {e}")
 
@@ -107,6 +115,11 @@ def chat():
                 primary_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in primary_group)
                 alternate_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in alternate_group)
 
+                log_query_console(query, {
+                    "primary": primary_summary,
+                    "alternate": alternate_summary
+                }, matched_topic=topic, response_type="stance_gst")
+
                 return jsonify({"response": {
                     "primary": primary_summary,
                     "alternate": alternate_summary
@@ -127,6 +140,7 @@ def chat():
 
             if topic in topic_response_cache:
                 print("⚡ Using cached response")
+                log_query_console(query, topic_response_cache[topic], matched_topic=topic, response_type="cached_topic_summary")
                 return jsonify({"response": topic_response_cache[topic]})
 
             chunks = topic_chunks.get(topic, [])
@@ -136,6 +150,7 @@ def chat():
             response = summarize_topic_by_candidate(topic, chunks)
             topic_response_cache[topic] = response
             save_topic_cache()
+            log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
             return jsonify({"response": response})
             
 
@@ -146,7 +161,7 @@ def chat():
             print(f"\U0001F501 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
 
             response = summarize_candidate_topic(candidate_name, topic, df)
-            log_query(query, response)
+            log_query_console(query, response, matched_topic=topic, response_type="generated_topic_summary")
             return jsonify({"response": response})
            
 
@@ -167,19 +182,21 @@ def chat():
             for chunk in chunks:
                 if chunk["name"].lower() == candidate_name.lower():
                     response = f"{chunk['name']} on {topic}:\n\n{chunk['text']}"
-                    log_query(query, response)
+                    log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
                     return jsonify({"response": response})
                     
-
+            log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_candidate_match")
             return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
             
             
         print("\U0001F198 Unrecognized query format. Returning default message.")
+        log_query_console(query, fallback_message, response_type="unrecognized_format")
         return jsonify({"response": "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"})
         
         
     except Exception as e:
         print(f"❌ Error processing request: {e}")
+        log_query_console(query, error_message, response_type="exception")
         return jsonify({"response": f"An error occurred: {e}"}), 500
        
 
