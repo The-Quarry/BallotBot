@@ -186,7 +186,7 @@ for query, result in st.session_state.chat_history:
                             st.session_state.liked_responses.append(item)
                             st.success(f"{name} saved!")
 
-                if result.get["alternate"]:
+                if result.get("alternate"):
                     with st.expander("💡 See what the others say"):
                         for item in result["alternate"]:
                             name = item.get("name", "Unknown")
