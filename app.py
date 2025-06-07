@@ -104,33 +104,32 @@ def chat():
             if topic == "gst":
                 stance_keyword = stance_match.group(2).lower()
                 if "support" in stance_keyword:
-                    filtered = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
+                    primary_group = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
+                    alternate_group = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
                 elif "oppose" in stance_keyword:
-                    filtered = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
+                    primary_group = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
+                    alternate_group = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
                 else:
-                    filtered = gst_stance_cache  # fallback
+                    primary_group = gst_stance_cache
+                    alternate_group = []
 
-                if not filtered:
+                if not primary_group:
                     return jsonify({"response": "No clear stances found on GST."})
 
-                supporters = [c for c in gst_stance_cache if c["stance"] == "SUPPORT"]
-                opposers = [c for c in gst_stance_cache if c["stance"] == "OPPOSE"]
+                def format_candidates(group):
+                    return [{
+                        "name": c["name"],
+                        "summary": f"{c['stance']} - {c['reason']}",
+                        "source_url": c.get("url", "")
+                    } for c in group]
 
-                primary_group = supporters if "support" in stance_keyword else opposers
-                alternate_group = opposers if "support" in stance_keyword else supporters
+                response = {
+                    "primary": format_candidates(primary_group),
+                    "alternate": format_candidates(alternate_group)
+                }
 
-                primary_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in primary_group)
-                alternate_summary = "\n\n".join(f"{c['name']}: {c['stance']} - {c['reason']}" for c in alternate_group)
-
-                log_query_console(query, {
-                    "primary": primary_summary,
-                    "alternate": alternate_summary
-                }, matched_topic=topic, response_type="stance_gst")
-                print("✅ log_query_console was called.")
-                return jsonify({"response": {
-                    "primary": primary_summary,
-                    "alternate": alternate_summary
-                }})
+                log_query_console(query, response, matched_topic=topic, response_type="stance_gst")
+                return jsonify({"response": response})
             
 
         summary_keywords = [
@@ -169,11 +168,19 @@ def chat():
             topic = parts[1].strip()
             print(f"\U0001F501 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
 
-            response = summarize_candidate_topic(candidate_name, topic, df)
-            log_query_console(query, response, matched_topic=topic, response_type="generated_topic_summary")
-            print("✅ log_query_console was called.")
-            return jsonify({"response": response})
-           
+            summary_text = summarize_candidate_topic(candidate_name, topic, df)
+
+            response_data = {
+                "candidates": [{
+                    "name": candidate_name,
+                    "url": candidate_url(candidate_name),
+                    "summary": summary_text
+                }],
+                "topic": topic
+            }
+
+            log_query_console(query, response_data, matched_topic=topic, response_type="generated_topic_summary")
+            return jsonify({"response": response_data})
 
         # ----- Candidate-specific topic queries -----
         candidate_topic_match = re.search(

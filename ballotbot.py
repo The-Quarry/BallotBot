@@ -172,24 +172,28 @@ for query, result in st.session_state.chat_history:
             st.markdown(query)
         with st.chat_message("BallotBot", avatar="ballotbot_logo.png"):
             if isinstance(result, dict) and "primary" in result:
-                st.markdown(result["primary"])
-                with st.expander("💡 See what those opposed say"):
-                    st.markdown(result["alternate"])
-            elif isinstance(result, str):
-                st.markdown(result)
-            elif isinstance(result, list):
-                for i, item in enumerate(result):
+                st.markdown("### ✅ These candidates match your stance:")
+                for i, item in enumerate(result["primary"]):
                     name = item.get("name", "Unknown")
-                    text = item.get("summary") or item.get("statement") or "No content"
+                    text = item.get("summary", "No statement available")
                     url = item.get("source_url", "")
                     name_md = f"[**{name}**]({url})" if url else f"**{name}**"
                     st.markdown(f"{name_md}: {text}")
 
-                    unique_key = make_safe_key("save", query, name, str(i))
-                    if st.button("✅ Save Candidate", key=unique_key):
+                    key = make_safe_key("save", query, name, str(i))
+                    if st.button("✅ Save Candidate", key=key):
                         if item not in st.session_state.liked_responses:
                             st.session_state.liked_responses.append(item)
                             st.success(f"{name} saved!")
+
+                if result.get["alternate"]:
+                    with st.expander("💡 See what the others say"):
+                        for item in result["alternate"]:
+                            name = item.get("name", "Unknown")
+                            text = item.get("summary", "No statement available")
+                            url = item.get("source_url", "")
+                            name_md = f"[**{name}**]({url})" if url else f"**{name}**"
+                            st.markdown(f"{name_md}: {text}")
             else:
                 st.markdown("⚠️ Unrecognized response format.")
 
