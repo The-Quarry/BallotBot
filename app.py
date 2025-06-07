@@ -78,6 +78,8 @@ stance_pattern = re.compile(
     re.IGNORECASE
 )
 
+print("🚀 Server is starting and logging works.")
+
 @app.route("/chat", methods=["POST"])
 def chat():
     try:
@@ -124,7 +126,7 @@ def chat():
                     "primary": primary_summary,
                     "alternate": alternate_summary
                 }, matched_topic=topic, response_type="stance_gst")
-
+                print("✅ log_query_console was called.")
                 return jsonify({"response": {
                     "primary": primary_summary,
                     "alternate": alternate_summary
@@ -146,6 +148,7 @@ def chat():
             if topic in topic_response_cache:
                 print("⚡ Using cached response")
                 log_query_console(query, topic_response_cache[topic], matched_topic=topic, response_type="cached_topic_summary")
+                print("✅ log_query_console was called.")
                 return jsonify({"response": topic_response_cache[topic]})
 
             chunks = topic_chunks.get(topic, [])
@@ -156,6 +159,7 @@ def chat():
             topic_response_cache[topic] = response
             save_topic_cache()
             log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
+            print("✅ log_query_console was called.")
             return jsonify({"response": response})
             
 
@@ -167,6 +171,7 @@ def chat():
 
             response = summarize_candidate_topic(candidate_name, topic, df)
             log_query_console(query, response, matched_topic=topic, response_type="generated_topic_summary")
+            print("✅ log_query_console was called.")
             return jsonify({"response": response})
            
 
@@ -188,15 +193,18 @@ def chat():
                 if chunk["name"].lower() == candidate_name.lower():
                     response = f"{chunk['name']} on {topic}:\n\n{chunk['text']}"
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
+                    print("✅ log_query_console was called.")
                     return jsonify({"response": response})
                     
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_candidate_match")
+            print("✅ log_query_console was called.")
             return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
             
             
         print("\U0001F198 Unrecognized query format. Returning default message.")
         fallback_message = "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"
         log_query_console(query, fallback_message, response_type="unrecognized_format")
+        print("✅ log_query_console was called.")
         return jsonify({"response": "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"})
         
         
@@ -204,6 +212,7 @@ def chat():
         print(f"❌ Error processing request: {e}")
         error_message = f"An error occurred: {e}"
         log_query_console(query, error_message, response_type="exception")
+        print("✅ log_query_console was called.")
         return jsonify({"response": f"An error occurred: {e}"}), 500
        
 
