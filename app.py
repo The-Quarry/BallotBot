@@ -40,19 +40,24 @@ def log_query_console(query, response, matched_topic=None, response_type="info")
     log_entry = {
         "timestamp": datetime.utcnow().isoformat(),
         "query": query,
-        "response": str(response)[:300],  # truncate long responses
+        "response": str(response)[:300],
         "topic": matched_topic or "unknown",
         "type": response_type
     }
 
-    print(json.dumps(log_entry))  # This logs to Render's console
+    # Always show in Render logs
+    print(json.dumps(log_entry))
 
+    # Attempt to store locally (may not persist on Render)
     try:
+        logs = []
         if os.path.exists("query_log.json"):
-            with open("query_log.json", "r") as f:
-                logs = json.load(f)
-        else:
-            logs = []
+            try:
+                with open("query_log.json", "r") as f:
+                    logs = json.load(f)
+            except json.JSONDecodeError:
+                print("⚠️ query_log.json is corrupt. Starting fresh.")
+                logs = []
 
         logs.insert(0, log_entry)
 
@@ -60,7 +65,7 @@ def log_query_console(query, response, matched_topic=None, response_type="info")
             json.dump(logs, f, indent=2)
 
     except Exception as e:
-        print(f"⚠️ Logging failed: {e}")
+        print(f"⚠️ Logging to file failed: {e}")
 
 # Save updated topic cache
 def save_topic_cache():
@@ -190,12 +195,14 @@ def chat():
             
             
         print("\U0001F198 Unrecognized query format. Returning default message.")
+        fallback_message = "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"
         log_query_console(query, fallback_message, response_type="unrecognized_format")
         return jsonify({"response": "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"})
         
         
     except Exception as e:
         print(f"❌ Error processing request: {e}")
+        error_message = f"An error occurred: {e}"
         log_query_console(query, error_message, response_type="exception")
         return jsonify({"response": f"An error occurred: {e}"}), 500
        
