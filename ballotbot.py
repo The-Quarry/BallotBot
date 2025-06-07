@@ -194,6 +194,21 @@ for query, result in st.session_state.chat_history:
                             url = item.get("source_url", "")
                             name_md = f"[**{name}**]({url})" if url else f"**{name}**"
                             st.markdown(f"{name_md}: {text}")
+
+            elif isinstance(result, dict) and "candidates" in result:
+                st.markdown("### 👤 Candidate summary:")
+                for i, item in enumerate(result["candidates"]):
+                    name = item.get("name", "Unknown")
+                    text = item.get("summary", "No statement available")
+                    url = item.get("url", "")
+                    name_md = f"[**{name}**]({url})" if url else f"**{name}**"
+                    st.markdown(f"{name_md}: {text}")
+
+                    key = make_safe_key("save", query, name, str(i))
+                    if st.button("✅ Save Candidate", key=key):
+                        if item not in st.session_state.liked_responses:
+                            st.session_state.liked_responses.append(item)
+                            st.success(f"{name} saved!")
             else:
                 st.markdown("⚠️ Unrecognized response format.")
 
