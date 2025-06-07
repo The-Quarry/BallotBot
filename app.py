@@ -72,6 +72,13 @@ def save_topic_cache():
     with open(cache_file, "w") as f:
         json.dump(topic_response_cache, f, indent=2)
 
+# candidate URLS
+
+def candidate_url(name):
+    """Generate a candidate profile URL slug from name"""
+    slug = name.strip().lower().replace(" ", "-")
+    return f"https://election2025.gg/candidates/{slug}"
+
 # Regex for stance-type queries
 stance_pattern = re.compile(
     r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?)\s+(.*)",
