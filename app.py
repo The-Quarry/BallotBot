@@ -79,6 +79,12 @@ def candidate_url(name):
     slug = name.strip().lower().replace(" ", "-")
     return f"https://election2025.gg/candidates/{slug}"
 
+# Topic normalized
+
+def normalize_topic(topic):
+    topic = topic.lower().strip()
+    return topic[4:] if topic.startswith("the ") else topic
+
 # Regex for stance-type queries
 stance_pattern = re.compile(
     r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?)\s+(.*)",
@@ -142,18 +148,20 @@ def chat():
 
         if any(phrase in cleaned_query for phrase in summary_keywords):
             topic = detect_topic_from_query(cleaned_query, aliases)
-            if topic.startswith("the "):  # 🆕 normalize
-                topic = topic[4:]
+            if topic:
+                topic = normalize_topic(topic)
             print(f"📚 Detected general topic: {topic}")
 
             if topic in topic_response_cache:
                 print("⚡ Using cached response")
                 response_data = topic_response_cache[topic]
+
                 if isinstance(response_data, str):
                     try:
                         response_data = json.loads(response_data)
                     except json.JSONDecodeError:
                         print("⚠️ Could not parse cached response as JSON")
+                        response_data = {"message": "⚠️ Corrupted cached response."}
 
                 log_query_console(query, response_data, matched_topic=topic, response_type="cached_topic_summary")
                 return jsonify({"response": response_data})
@@ -162,7 +170,7 @@ def chat():
             if not chunks:
                 return jsonify({"response": f"No information found on {topic}."})
 
-            response = summarize_topic_by_candidate(topic, chunks)
+            response = {"candidates": summarize_topic_by_candidate(topic, chunks)}
             topic_response_cache[topic] = response
             save_topic_cache()
             log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
