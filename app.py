@@ -153,9 +153,15 @@ def chat():
 
             if topic in topic_response_cache:
                 print("⚡ Using cached response")
-                log_query_console(query, topic_response_cache[topic], matched_topic=topic, response_type="cached_topic_summary")
-                print("✅ log_query_console was called.")
-                return jsonify({"response": topic_response_cache[topic]})
+                response_data = topic_response_cache[topic]
+                if isinstance(response_data, str):
+                    try:
+                        response_data = json.loads(response_data)
+                    except json.JSONDecodeError:
+                        print("⚠️ Could not parse cached response as JSON")
+
+                log_query_console(query, response_data, matched_topic=topic, response_type="cached_topic_summary")
+                return jsonify({"response": response_data})
 
             chunks = topic_chunks.get(topic, [])
             if not chunks:
