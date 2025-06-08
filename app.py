@@ -95,17 +95,17 @@ def chat():
         print(f"Received query: {query}")
 
         cleaned_query = re.sub(r"[^\w\s]", "", query.lower())
-        print(f"\U0001F527 Cleaned query: {cleaned_query}")
+        print(f"🔧 Cleaned query: {cleaned_query}")
 
         stance_match = stance_pattern.search(cleaned_query)
 
         if stance_match:
             topic = detect_topic_from_query(stance_match.group(3), aliases)
-            print(f"\U0001F4DA Detected general topic: {topic}")
-    
+            print(f"📚 Detected general topic: {topic}")
+
             position_keywords = [stance_match.group(2).lower()] + query.lower().split()
-            print(f"\U0001F50D Searching for stance on: {topic}")
-            print(f"\U0001F511 Position keywords: {position_keywords}")
+            print(f"🔍 Searching for stance on: {topic}")
+            print(f"🔑 Position keywords: {position_keywords}")
 
             # Special handling for GST using cache
             if topic == "gst":
@@ -137,31 +137,40 @@ def chat():
 
                 log_query_console(query, response, matched_topic=topic, response_type="stance_gst")
                 return jsonify({"response": response})
-            
 
         summary_keywords = [
-    "what do candidates say", "how do candidates view",
-    "what are the candidates", "what is said about",
-    "what are the views on", "tell me about", "views on", "summary of",
-    "what do they think", "what do they believe", "what is their position",
-    "what do they say", "how do they feel about"
-    ]
+            "what do candidates say", "how do candidates view",
+            "what are the candidates", "what is said about",
+            "what are the views on", "tell me about", "views on", "summary of",
+            "what do they think", "what do they believe", "what is their position",
+            "what do they say", "how do they feel about"
+        ]
 
         if any(phrase in cleaned_query for phrase in summary_keywords):
             topic = detect_topic_from_query(cleaned_query, aliases)
-            print(f"\U0001F4DA Detected general topic: {topic}")
+            print(f"📚 Detected general topic: {topic}")
 
             if topic in topic_response_cache:
                 print("⚡ Using cached response")
                 response_data = topic_response_cache[topic]
+
                 if isinstance(response_data, str):
                     try:
                         response_data = json.loads(response_data)
                     except json.JSONDecodeError:
                         print("⚠️ Could not parse cached response as JSON")
+                        response_data = []
 
-                log_query_console(query, response_data, matched_topic=topic, response_type="cached_topic_summary")
-                return jsonify({"response": response_data})
+                if isinstance(response_data, list):
+                    wrapped_response = {"candidates": response_data}
+                elif isinstance(response_data, dict):
+                    wrapped_response = response_data
+                else:
+                    print("⚠️ Unexpected data type in topic_response_cache")
+                    wrapped_response = {"candidates": []}
+
+                log_query_console(query, wrapped_response, matched_topic=topic, response_type="cached_topic_summary")
+                return jsonify({"response": wrapped_response})
 
             chunks = topic_chunks.get(topic, [])
             if not chunks:
@@ -173,13 +182,12 @@ def chat():
             log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
             print("✅ log_query_console was called.")
             return jsonify({"response": response})
-            
 
         if "what does" in cleaned_query and "say about" in cleaned_query:
             parts = cleaned_query.split("say about")
             candidate_name = parts[0].replace("what does", "").strip()
             topic = parts[1].strip()
-            print(f"\U0001F501 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
+            print(f"🔁 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
 
             summary_text = summarize_candidate_topic(candidate_name, topic, df)
 
@@ -204,36 +212,33 @@ def chat():
         if candidate_topic_match:
             candidate_name = candidate_topic_match.group(1).strip()
             topic = detect_topic_from_query(candidate_topic_match.group(3).strip(), aliases)
-            print(f"\U0001F9D1‍\U0001F4BC Candidate detected: {candidate_name} | \U0001F9F5 Topic detected: {topic}")
+            print(f"🧑‍💼 Candidate detected: {candidate_name} | 🧠 Topic detected: {topic}")
 
             chunks = topic_chunks.get(topic, [])
 
-            # Search for candidate-specific info
             for chunk in chunks:
                 if chunk["name"].lower() == candidate_name.lower():
                     response = f"{chunk['name']} on {topic}:\n\n{chunk['text']}"
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
                     print("✅ log_query_console was called.")
                     return jsonify({"response": response})
-                    
+
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_candidate_match")
             print("✅ log_query_console was called.")
             return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
-            
-            
-        print("\U0001F198 Unrecognized query format. Returning default message.")
-        fallback_message = "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"
+
+        print("🆘 Unrecognized query format. Returning default message.")
+        fallback_message = "I'm really sorry, I can't answer that question. Please try again by referring to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"
         log_query_console(query, fallback_message, response_type="unrecognized_format")
         print("✅ log_query_console was called.")
-        return jsonify({"response": "I'm really sorry, I can't answer that question. Please try again by refering to a candidate and topic area. I'll log this problem so it can be fixed, so please come back again!"})
-        
-        
+        return jsonify({"response": fallback_message})
+
     except Exception as e:
         print(f"❌ Error processing request: {e}")
         error_message = f"An error occurred: {e}"
         log_query_console(query, error_message, response_type="exception")
         print("✅ log_query_console was called.")
-        return jsonify({"response": f"An error occurred: {e}"}), 500
+        return jsonify({"response": error_message}), 500
        
 
     
