@@ -100,8 +100,14 @@ def chat():
         query = data.get("query", "")
         print(f"Received query: {query}")
 
-        cleaned_query = re.sub(r"[^\w\s]", "", query.lower())
-        cleaned_query = cleaned_query.replace(" the ", " ")  # 🆕 normalize 'the'
+        # Normalize special characters and formatting issues
+        cleaned_query = query.lower()
+        cleaned_query = cleaned_query.replace("’", "'")  # curly apostrophe
+        cleaned_query = cleaned_query.replace("‘", "'")  # opening curly apostrophe
+        cleaned_query = cleaned_query.replace("“", '"').replace("”", '"')  # curly quotes
+        cleaned_query = cleaned_query.replace("–", "-").replace("—", "-")  # en and em dashes
+        cleaned_query = re.sub(r"[^\w\s'\-]", "", cleaned_query)  # remove other non-word characters, keep hyphens and apostrophes
+        cleaned_query = cleaned_query.replace(" the ", " ")  # normalize 'the'
 
         print(f"🔧 Cleaned query: {cleaned_query}")
 
