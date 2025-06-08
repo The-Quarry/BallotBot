@@ -132,7 +132,14 @@ def chat():
                 return jsonify({"response": response})
 
         # --- General topic summary ---
-        summary_keywords = [...]
+        summary_keywords = [
+            "what do candidates say", "how do candidates view",
+            "what are the candidates", "what is said about",
+            "what are the views on", "tell me about", "views on",
+            "summary of", "what do they think", "what do they believe",
+            "what is their position", "what do they say", "how do they feel about"
+        ]
+
         if any(phrase in cleaned_query for phrase in summary_keywords):
             topic = detect_topic_from_query(cleaned_query, aliases)
             if topic.startswith("the "):  # 🆕 normalize
