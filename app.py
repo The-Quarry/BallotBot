@@ -163,6 +163,9 @@ def chat():
                         print("⚠️ Could not parse cached response as JSON")
                         response_data = {"message": "⚠️ Corrupted cached response."}
 
+                if isinstance(response_data, list):
+                    response_data = {"candidates": response_data}                 
+
                 log_query_console(query, response_data, matched_topic=topic, response_type="cached_topic_summary")
                 return jsonify({"response": response_data})
 
