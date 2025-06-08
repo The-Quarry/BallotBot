@@ -179,6 +179,11 @@ def chat():
             if not chunks:
                 return jsonify({"response": f"No information found on {topic}."})
 
+            if len(chunks) > 40:
+                warning = {"message": f"Topic '{topic}' includes too many candidate sources to summarise right now. Please try a more specific query."}
+                log_query_console(query, warning, matched_topic=topic, response_type="topic_too_large")
+                return jsonify({"response": warning})
+
             response = {"candidates": summarize_topic_by_candidate(topic, chunks)}
             topic_response_cache[topic] = response
             save_topic_cache()
