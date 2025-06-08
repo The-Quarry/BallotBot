@@ -77,7 +77,7 @@ st.markdown("""
     /* Mobile adjustments */
     @media screen and (max-width: 768px) {
         .stButton > button {
-            font-size: 16px !important;
+            font-size: 14px !important;
             padding: 10px 14px !important;
         }
 
@@ -128,11 +128,11 @@ suggested_prompts = [
     "What do candidates say about housing?",
     "How do candidates view the economy?",
     "What are the views on education?",
-    "What do candidates say about the health service?",
+    "What do candidates say about health?",
     "What are the views on taxation?",
     "Who supports GST?",
     "What do they think about government reform?",
-    "What are the candidates’ ideas on transport?"
+    "What is said about transport?"
 ]
 
 st.markdown("**Try a question below or type your own:**")

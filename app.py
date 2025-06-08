@@ -195,6 +195,9 @@ def chat():
 
             print(f"🔁 Fallback to summarize_candidate_topic: '{candidate_name}' on '{topic}'")
             summary_text = summarize_candidate_topic(candidate_name, topic, df)
+            if not isinstance(summary_text, str):
+                summary_text = "No relevant content found."
+
             response_data = {
                 "candidates": [{
                     "name": candidate_name,
@@ -223,7 +226,13 @@ def chat():
             chunks = topic_chunks.get(topic, [])
             for chunk in chunks:
                 if chunk["name"].lower() == candidate_name.lower():
-                    response = f"{chunk['name']} on {topic}:\n\n{chunk['text']}"
+                    response = {
+                        "candidates": [{
+                            "name": chunk['name'],
+                            "summary": chunk['text'],
+                            "url": candidate_url(chunk['name'])
+                        }]
+                    }
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
                     return jsonify({"response": response})
 
