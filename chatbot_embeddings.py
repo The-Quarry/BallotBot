@@ -53,8 +53,13 @@ except FileNotFoundError:
 MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
 
 # --- Utility Functions ---
+def normalize_topic(topic):
+    topic = topic.lower().strip()
+    return topic[4:] if topic.startswith("the ") else topic
+
+
 def detect_topic_from_query(query, aliases):
-    query_lower = query.lower()
+    query_lower = query.lower().strip()
     for topic, alias_list in aliases.items():
         if topic.lower() in query_lower:
             return topic
@@ -122,6 +127,8 @@ Statements:
 def summarize_topic_by_candidate(topic, chunks, batch_size=5):
     if not chunks:
         return [{"message": f"No candidate statements found on {topic}."}]
+
+    topic = normalize_topic(topic)
 
     batch_summaries = []
     for i in range(0, len(chunks), batch_size):
@@ -191,6 +198,9 @@ def get_most_relevant_chunk(topic, topic_chunks):
     return best_match
 
 def summarize_candidate_topic(candidate_name, topic, df):
+    # Normalize topic for better keyword matching
+    topic = normalize_topic(topic)
+        
     for _, row in df.iterrows():
         if row.get("name", "").lower() == candidate_name.lower():
             text = row.get("text", "")
@@ -227,6 +237,8 @@ def summarize_candidate_topic(candidate_name, topic, df):
     return f"No relevant response found for {candidate_name} on {topic}."
 
 def summarize_topic(topic):
+    topic = normalize_topic(topic)
+
     if topic in topic_summary_cache:
         return topic_summary_cache[topic]
     matched_chunks = []
