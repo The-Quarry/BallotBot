@@ -147,9 +147,9 @@ def chat():
         summary_keywords = [
             "what do candidates say", "how do candidates view",
             "what are the candidates", "what is said about",
-            "what are the views on", "tell me about", "views on",
-            "summary of", "what do they think", "what do they believe",
-            "what is their position", "what do they say", "how do they feel about"
+            "what are the views on", "tell me about", "views on", "Tell me candidates' thoughts",
+            "summary of", "what do they think", "what do they believe", "What are the candidates’ plans",
+            "what is their position", "what do they say", "how do they feel about", "what are the candidates’ ideas"
         ]
 
         if any(phrase in cleaned_query for phrase in summary_keywords):
