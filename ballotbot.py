@@ -102,11 +102,6 @@ st.sidebar.title("🗳️ BallotBot")
 st.sidebar.markdown("""
 Overwhelmed by the mountain of campaign material in the **2025 Guernsey General Election**? We are here to help.
 
-Ask what candidates say about:
-- **GST**
-- **Housing**
-- **Air Links** and more...
-
 BallotBot uses candidate manifestos, podcasts, hustings and more. They were built by The Quarry as part of our efforts to drive community engagement. AI has been used and all answers are regularly checked for accuracy. They will also update as candidates policy positions become clearer during the campaign.
 """)
 
