@@ -115,6 +115,14 @@ st.title("BallotBot - Election 2025")
 
 API_URL = "https://ballotbot.onrender.com/chat"
 
+# --- Clear chat history at top of main panel ---
+if st.button("🗑️ Clear Chat History", key="main_clear_chat"):
+    st.session_state.chat_history = []
+    st.session_state.query = ""
+    st.session_state.pending_query = None
+    st.session_state.processing_query = False
+    st.rerun()
+
 # --- Suggested prompts ---
 suggested_prompts = [
     "What do candidates say about housing?",
