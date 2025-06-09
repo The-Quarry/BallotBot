@@ -87,7 +87,7 @@ def normalize_topic(topic):
 
 # Regex for stance-type queries
 stance_pattern = re.compile(
-    r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?)\s+(.*)",
+    r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?|are\s+against|don't\s+support|do\s+not\s+support|disagree\s+with)\s+(.*)",
     re.IGNORECASE
 )
 
