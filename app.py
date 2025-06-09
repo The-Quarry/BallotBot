@@ -258,23 +258,12 @@ def chat():
                 save_topic_cache()
                 log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
                 return jsonify({"response": response})
-    
-    # 🧭 If no chunks found, fallback to embeddings-based summary
-    print(f"🧭 No chunks found for topic '{topic}' – falling back to embeddings-based keyword summary.")
-    keyword_summary = last_resort_keyword_summary(query, df, fallback_topic=topic)
-    log_query_console(query, keyword_summary, matched_topic=topic, response_type="keyword_gpt_summary")
-    return jsonify({"response": keyword_summary})
+            else:
+                print(f"🧭 No chunks found for topic '{topic}' – falling back to embeddings-based keyword summary.")
+                keyword_summary = last_resort_keyword_summary(query, df, fallback_topic=topic)
+                log_query_console(query, keyword_summary, matched_topic=topic, response_type="keyword_gpt_summary")
+                return jsonify({"response": keyword_summary})
 
-            if len(chunks) > 40:
-                warning = {"message": f"Topic '{topic}' includes too many candidate sources to summarise right now. Please try a more specific query."}
-                log_query_console(query, warning, matched_topic=topic, response_type="topic_too_large")
-                return jsonify({"response": warning})
-
-            response = {"candidates": summarize_topic_by_candidate(topic, chunks)}
-            topic_response_cache[topic] = response
-            save_topic_cache()
-            log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
-            return jsonify({"response": response})
 
         # --- Fallback: single candidate on topic ---
         if "what does" in cleaned_query and "say about" in cleaned_query:
