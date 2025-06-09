@@ -248,7 +248,19 @@ def chat():
 
             chunks = topic_chunks.get(topic, [])
             if not chunks:
-                return jsonify({"response": f"No information found on {topic}."})
+                print(f"🧭 No chunks found for topic '{topic}' – falling back to embeddings-based keyword summary.")
+                # Let fallback logic run
+            else:
+                if len(chunks) > 40:
+                    warning = {"message": f"Topic '{topic}' includes too many candidate sources to summarise right now. Please try a more specific query."}
+                    log_query_console(query, warning, matched_topic=topic, response_type="topic_too_large")
+                    return jsonify({"response": warning})
+
+                response = {"candidates": summarize_topic_by_candidate(topic, chunks)}
+                topic_response_cache[topic] = response
+                save_topic_cache()
+                log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
+                return jsonify({"response": response})
 
             if len(chunks) > 40:
                 warning = {"message": f"Topic '{topic}' includes too many candidate sources to summarise right now. Please try a more specific query."}
