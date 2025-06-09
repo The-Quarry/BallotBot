@@ -105,8 +105,13 @@ Summary:"""
         return text.strip().split("\n")[0][:400] + "..."
 
 # Last-resort keyword matcher using embeddings.csv
-def last_resort_keyword_summary(query, df, top_n=3):
-    query_keywords = extract_keywords(query)
+def last_resort_keyword_summary(query, df, fallback_topic=None, top_n=3):
+    if fallback_topic is None:
+        fallback_topic = detect_topic_from_query(query, aliases)
+    if fallback_topic and fallback_topic in aliases:
+        query_keywords = [kw.lower() for kw in aliases[fallback_topic]]
+    else:
+        query_keywords = extract_keywords(query)
     print(f"🔍 Fallback keywords: {query_keywords}")
 
     matches = defaultdict(list)
@@ -361,7 +366,7 @@ def chat():
                     log_query_console(query, f"⚠️ GPT fallback failed: {e}", matched_topic=fallback_topic, response_type="gpt_error")
             else:
                 # No topic chunks found, use keyword matcher with GPT summaries over df
-                keyword_summary = last_resort_keyword_summary(query, df)
+                keyword_summary = last_resort_keyword_summary(query, df, fallback_topic=fallback_topic)
                 log_query_console(query, keyword_summary, matched_topic=fallback_topic, response_type="keyword_gpt_summary")
                 return jsonify({"response": keyword_summary})
         
