@@ -60,12 +60,18 @@ def normalize_topic(topic):
 
 def detect_topic_from_query(query, aliases):
     query_lower = query.lower().strip()
+
+    # First check aliases
     for topic, alias_list in aliases.items():
-        if topic.lower() in query_lower:
-            return topic
         for alias in alias_list:
             if alias.lower() in query_lower:
                 return topic
+
+    # Then check topic names directly
+    for topic in aliases:
+        if topic.lower() in query_lower:
+            return topic
+
     return None
 
 def get_model():
