@@ -4,6 +4,7 @@ import json
 import pickle
 import difflib
 import nltk
+import pandas as pd
 from nltk.tokenize import sent_tokenize
 from topics import aliases
 from openai import OpenAI
@@ -20,14 +21,23 @@ def ensure_nltk():
 # --- Load embeddings data ---
 
 def load_embeddings():
-    with open("embeddings.pkl", "rb") as f:
-        df = pickle.load(f)
+    try:
+        with open("embeddings.pkl", "rb") as f:
+            df = pickle.load(f)
+        print("✅ Loaded embeddings from pickle file.")
+    except Exception as e:
+        print(f"⚠️ Failed to load embeddings.pkl: {e}")
+        print("📄 Attempting to load from embeddings.csv instead...")
+        df = pd.read_csv("embeddings.csv")
+
+    # Normalize any legacy columns
     if "Candidate Name" in df.columns:
         df.rename(columns={
             "Candidate Name": "name",
             "Text": "text",
             "URL": "source_url"
         }, inplace=True)
+
     return df
 
 df = load_embeddings()
