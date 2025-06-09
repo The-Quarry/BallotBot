@@ -215,6 +215,31 @@ def chat():
             log_query_console(query, response_data, matched_topic=topic, response_type="generated_topic_summary")
             return jsonify({"response": response_data})
 
+        # --- Fallback: "[Candidate] on [Topic]" style query ---
+        short_form_match = re.match(r"^([\w\s\-']+?)\s+on\s+([\w\s\-']+)$", cleaned_query)
+        if short_form_match:
+            candidate_name = short_form_match.group(1).strip()
+            topic = detect_topic_from_query(short_form_match.group(2).strip(), aliases)
+            if topic.startswith("the "):  # normalize
+                topic = topic[4:]
+
+            print(f"📌 Short form detected: {candidate_name} on {topic}")
+            chunks = topic_chunks.get(topic, [])
+            for chunk in chunks:
+                if chunk["name"].lower() == candidate_name.lower():
+                    response = {
+                        "candidates": [{
+                            "name": chunk['name'],
+                            "summary": chunk['text'],
+                            "url": candidate_url(chunk['name'])
+                        }]
+                    }
+                    log_query_console(query, response, matched_topic=topic, response_type="fallback_short_form_match")
+                    return jsonify({"response": response})
+
+            log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_short_match")
+            return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
+
         # --- Fallback: more complex phrasing ---
         candidate_topic_match = re.search(
             r"(?:what does|where does|tell me what)\s+([\w\s\-']+?)\s+(?:say|think|stand).*?\b(on|about)?\b\s+([\w\s\-']+)",

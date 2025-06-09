@@ -110,17 +110,11 @@ st.title("BallotBot - Election 2025")
 
 API_URL = "https://ballotbot.onrender.com/chat"
 
-# --- Clear chat history at top of main panel ---
-if st.button("🗑️ Clear Chat History", key="main_clear_chat"):
-    st.session_state.chat_history = []
-    st.session_state.query = ""
-    st.session_state.pending_query = None
-    st.session_state.processing_query = False
-    st.rerun()
+
 
 # --- Suggested prompts ---
 suggested_prompts = [
-    "What do candidates say about housing?",
+    "What is said about housing?",
     "How do candidates view the economy?",
     "What are the views on education?",
     "What do candidates say about health?",
@@ -130,11 +124,19 @@ suggested_prompts = [
     "What is said about transport?"
 ]
 
-st.markdown("**Try a question below or type your own:**")
+st.markdown("**Suggested questions:**")
 cols = st.columns(3)
 for i, prompt in enumerate(suggested_prompts):
     if cols[i % 3].button(prompt, key=f"prompt_{i}"):
         st.session_state.pending_query = prompt
+
+# --- Clear chat history at top of main panel ---
+if st.button("🗑️ Clear Chat History", key="main_clear_chat"):
+    st.session_state.chat_history = []
+    st.session_state.query = ""
+    st.session_state.pending_query = None
+    st.session_state.processing_query = False
+    st.rerun()
 
 # --- Chat input ---
 user_input = st.chat_input("Ask about a candidate or a policy...")
@@ -213,7 +215,7 @@ for query, result in st.session_state.chat_history:
                             st.session_state.liked_responses.append(item)
                             st.success(f"{name} saved!")
             else:
-                st.markdown("⚠️ Unrecognized response format.")
+                st.warning("🤔 Sorry, I couldn't understand that question format. Try asking something like 'What does Jane Doe say about housing?'.")
 
 # --- Prepare PDF file if needed ---
 temp_pdf_path = None
