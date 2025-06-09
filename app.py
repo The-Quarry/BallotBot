@@ -344,6 +344,11 @@ def chat():
             chunks = topic_chunks.get(fallback_topic, [])
 
             if chunks:
+                if len(chunks) > 40:
+                    warning = {"message": f"The topic '{fallback_topic}' includes too many sources to summarize directly. Please try a more specific question (e.g., 'special needs in schools')."}
+                    log_query_console(query, warning, matched_topic=fallback_topic, response_type="fallback_topic_too_large")
+                    return jsonify({"response": warning})
+
                 try:
                     gpt_summary = summarize_topic_with_gpt(fallback_topic, chunks)
                     response_data = {

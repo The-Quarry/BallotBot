@@ -64,7 +64,7 @@ def detect_topic_from_query(query, aliases):
     # First check aliases
     for topic, alias_list in aliases.items():
         for alias in alias_list:
-            if alias.lower() in query_lower:
+            if re.search(rf"\b{re.escape(alias.lower())}\b", query_lower):
                 return topic
 
     # Then check topic names directly
