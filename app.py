@@ -2,6 +2,9 @@ import os
 import re
 import json
 import pickle
+import re
+from collections import defaultdict
+import openai
 from flask import Flask, request, jsonify
 from datetime import datetime
 from flask_cors import CORS
@@ -67,6 +70,69 @@ def log_query_console(query, response, matched_topic=None, response_type="info")
     except Exception as e:
         print(f"⚠️ Logging to file failed: {e}")
 
+# Keyword extractor
+def extract_keywords(query):
+    stopwords = set([
+        "what", "does", "do", "say", "think", "about", "on", "the", "is",
+        "candidates", "candidate", "view", "views", "opinions", "are", "their", "position"
+    ])
+    tokens = re.findall(r"\b\w+\b", query.lower())
+    return [word for word in tokens if word not in stopwords]
+
+# GPT-powered summarizer
+def gpt_summarize_candidate(candidate_name, text, query):
+    prompt = f"""The following is campaign content from a candidate in an election. Based on the content and the question, summarize the candidate's position in a clear and concise way suitable for a general audience.
+
+Candidate: {candidate_name}
+User question: {query}
+Content:
+\"\"\"
+{text.strip()}
+\"\"\"
+
+Summary:"""
+
+    try:
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=250,
+            temperature=0.4
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"⚠️ GPT fallback error: {e}")
+        return text.strip().split("\n")[0][:400] + "..."
+
+# Last-resort keyword matcher using embeddings.csv
+def last_resort_keyword_summary(query, df, top_n=3):
+    query_keywords = extract_keywords(query)
+    print(f"🔍 Fallback keywords: {query_keywords}")
+
+    matches = defaultdict(list)
+
+    for _, row in df.iterrows():
+        candidate = row.get("name", "").strip()
+        text = str(row.get("Text", "")).lower()
+
+        if any(keyword in text for keyword in query_keywords):
+            matches[candidate].append(row)
+
+    if not matches:
+        return {"message": "Sorry, I couldn't find relevant information on that topic."}
+
+    results = []
+    for candidate, entries in matches.items():
+        combined_text = " ".join(str(e["Text"]) for e in entries[:top_n])
+        summary = gpt_summarize_candidate(candidate, combined_text, query)
+        results.append({
+            "name": candidate,
+            "summary": summary,
+            "url": candidate_url(candidate)
+        })
+
+    return {"candidates": results}
+
 # Save updated topic cache
 def save_topic_cache():
     with open(cache_file, "w") as f:
@@ -87,7 +153,7 @@ def normalize_topic(topic):
 
 # Regex for stance-type queries
 stance_pattern = re.compile(
-    r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?|are\s+against|don't\s+support|do\s+not\s+support|disagree\s+with)\s+(.*)",
+    r"\b(who|which candidates)\b\s+(support(?:s)?|oppose(?:s)?|want(?:s)?|favour(?:s)?|reject(?:s)?|are\s+against|are\s+for|is\s+against|is\s+for|don't\s+support|do\s+not\s+support|disagree\s+with)\s+(.*)",
     re.IGNORECASE
 )
 
@@ -268,6 +334,37 @@ def chat():
 
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_candidate_match")
             return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
+
+       
+        # --- Last-resort: keyword-based GPT summary ---
+        fallback_topic = detect_topic_from_query(cleaned_query, aliases)
+        if fallback_topic:
+            print(f"🆘 Last-resort GPT fallback: detected topic '{fallback_topic}'")
+
+            chunks = topic_chunks.get(fallback_topic, [])
+
+            if chunks:
+                try:
+                    gpt_summary = summarize_topic_with_gpt(fallback_topic, chunks)
+                    response_data = {
+                        "candidates": gpt_summary,
+                        "topic": fallback_topic
+                    }
+                    log_query_console(query, response_data, matched_topic=fallback_topic, response_type="gpt_fallback_summary")
+                    return jsonify({"response": response_data})
+                except Exception as e:
+                    log_query_console(query, f"⚠️ GPT fallback failed: {e}", matched_topic=fallback_topic, response_type="gpt_error")
+            else:
+                # No topic chunks found, use keyword matcher with GPT summaries over df
+                keyword_summary = last_resort_keyword_summary(query, df)
+                log_query_console(query, keyword_summary, matched_topic=fallback_topic, response_type="keyword_gpt_summary")
+                return jsonify({"response": keyword_summary})
+        
+        # --- Final fallback: use keyword matcher across all embeddings if no topic matched ---
+        print("🧭 No alias-based topic detected. Using full-text fallback.")
+        keyword_summary = last_resort_keyword_summary(query, df)
+        log_query_console(query, keyword_summary, matched_topic="unknown", response_type="keyword_fulltext_summary")
+        return jsonify({"response": keyword_summary})
 
         # --- Final fallback ---
         fallback_message = "I'm really sorry, I can't answer that question. Please try again by referring to a candidate and topic area."
