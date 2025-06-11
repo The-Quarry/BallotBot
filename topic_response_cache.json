@@ -1485,7 +1485,790 @@
     }
   ],
   "transport": {
-    "candidates": []
+    "sport": [],
+    "arts": [],
+    "transport": [
+      {
+        "name": "Sue Aldwell",
+        "text": "The extract provided does not contain specific information on Sue Aldwell's policy views regarding transport.",
+        "url": "https://election2025.gg/candidates/browse/sue-aldwell/"
+      },
+      {
+        "name": "Art Allen",
+        "text": "Art Allen's main policy point on transport focuses on improving air travel safety and capacity at Guernsey Airport. He advocates for the implementation of an Engineered Material Arresting System (EMAS), which would enhance air landing safety and accommodate additional aircraft types, thereby supporting the tourism and hospitality sectors.",
+        "url": "https://election2025.gg/candidates/browse/art-allen-o-leary/"
+      },
+      {
+        "name": "Heidi Almonte",
+        "text": "Heidi Almonte's policy views on transport emphasize reducing traffic congestion and promoting alternative modes of transportation. She advocates for increased walking and cycling, highlighting the health and environmental benefits. Almonte proposes the creation of a named walk/cycle path encircling the island, which could serve as a tourist attraction and encourage locals to engage more with their natural surroundings. This initiative aims to ease traffic, reduce parking concerns, and improve overall public health while supporting environmental sustainability.",
+        "url": "https://election2025.gg/candidates/browse/heidi-salsa-almonte/"
+      },
+      {
+        "name": "Kerry Barnfather",
+        "text": "Kerry Barnfather's policy views on transport focus on collaborative action and transparency. She emphasizes the importance of electing the right individuals who will take decisive action through collaboration, ensuring that future transport policies are realistic, fair, and well-communicated. Barnfather advocates for involving all parties with a vested interest in transport outcomes to achieve attainable and sustainable solutions.",
+        "url": "https://election2025.gg/candidates/browse/kerry-barnfather/"
+      },
+      {
+        "name": "Chris Blin",
+        "text": "Chris Blin, as Vice-President of the Transport and Licensing Authority, has been involved in overseeing transport licensing and regulatory functions. However, he notes that since 2018, the requirement for air route licenses has mostly been suspended due to the Open Skies policy. He suggests considering the suspension of this committee to simplify States operations. Additionally, Blin emphasizes the importance of strengthening air and sea links to drive trade and tourism, which is part of his broader economic growth strategy.",
+        "url": "https://election2025.gg/candidates/browse/chris-blin/"
+      },
+      {
+        "name": "Yvonne Burford",
+        "text": "Yvonne Burford's manifesto does not explicitly mention transport policy in the provided extract. However, her background as a pilot and her focus on environmental issues suggest she may have an interest in sustainable transport solutions. To gather specific details on her transport policies, one would need to refer to additional resources or her full manifesto.",
+        "url": "https://election2025.gg/candidates/browse/yvonne-burford/"
+      },
+      {
+        "name": "Andy Cameron",
+        "text": "Candidate Andy Cameron emphasizes the improvement of air and sea links as a key transport policy. He has supported IT-related projects that enhance transportation services, such as the Guernsey Taxi App and live bus timetables on Google Maps, which were fast-tracked before the 2023 Island Games. Cameron also highlights the success of initiatives like \u201cschool streets,\u201d which encourage active travel for students, allowing them to gain confidence and travel independently.",
+        "url": "https://election2025.gg/candidates/browse/andy-cameron/"
+      },
+      {
+        "name": "Haley Camp",
+        "text": "The extract does not provide specific policy points from candidate Haley Camp regarding transport. Her focus is primarily on economic growth, education, housing, and efficient governance.",
+        "url": "https://election2025.gg/candidates/browse/haley-camp/"
+      },
+      {
+        "name": "Tim Carre",
+        "text": "In the provided extract, Tim Carre does not explicitly address transport policies. However, he mentions concerns related to food security and the current ferry service, indicating a need for a more secure transportation system for food supplies. Beyond this, there are no specific transport-related policies or proposals outlined in the text.",
+        "url": "https://election2025.gg/candidates/browse/tim-carre/"
+      },
+      {
+        "name": "Garry Collins",
+        "text": "The provided extract does not include any specific policy points made by candidate Garry Collins on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/garry-collins/"
+      },
+      {
+        "name": "Tony Corbin",
+        "text": "Tony Corbin's main policy points on transport include his founding of a Special Needs Shopping Bus Service, which he ran for 11 years. This initiative demonstrates his commitment to accessible transportation solutions for vulnerable groups in the community.",
+        "url": "https://election2025.gg/candidates/browse/tony-corbin/"
+      },
+      {
+        "name": "Rob Curgenven",
+        "text": "Rob Curgenven's policy views on transport focus on addressing Guernsey's fiscal deficit through innovative solutions rather than raising taxes. While his manifesto does not directly address transport infrastructure, his broader economic strategies could indirectly impact transport by fostering economic growth and efficiency. Specifically, his support for the wind farm project could enhance sustainable energy use, potentially affecting transportation energy needs. Additionally, his emphasis on positioning Guernsey as a leader in AI and fintech could lead to advancements in transport technologies. However, detailed transport-specific policies are not explicitly outlined in the provided extract.",
+        "url": "https://election2025.gg/candidates/browse/rob-curgenven/"
+      },
+      {
+        "name": "David De Lisle",
+        "text": "David De Lisle's main policy points on transport focus on ensuring reliable, sustainable, and affordable air and sea links, which he views as essential for travel freedom and supporting both long and short stay tourism, vital for Guernsey's economy. He supports the efforts of Brittany Ferries in promoting the islands, particularly Guernsey. Additionally, De Lisle emphasizes the need for adequate parking in town centers to support residents and the success of retail, hospitality, and financial businesses. He also calls for sensitive regeneration initiatives in St Peter Port and the Bridge to enhance vibrancy and footfall in these areas.",
+        "url": "https://election2025.gg/candidates/browse/david-de-lisle/"
+      },
+      {
+        "name": "Lindsay de Sausmarez",
+        "text": "Lindsay de Sausmarez emphasizes a strategic and long-term approach to transport policy, focusing on reducing traffic impact and improving access to green spaces. She has streamlined processes for taxis and buses, modernized al fresco permits, and introduced a new driving license category to aid charities. She advocates for cost-efficient road maintenance and has been involved in initiatives like School Streets to enhance children's safety during their journeys. Her transport policies are part of a broader commitment to balance social, environmental, and economic needs while maintaining fiscal responsibility.",
+        "url": "https://election2025.gg/candidates/browse/lindsay-de-sausmarez/"
+      },
+      {
+        "name": "Adrian Dilcock",
+        "text": "Adrian Dilcock's views on transport focus primarily on the challenges facing Guernsey's air and sea links. He highlights the financial struggles and unreliability of the States-owned airline, which has incurred significant losses and remains expensive compared to competitors. Additionally, he points out the aging sea travel and freight vessels, which are due for updates over the next 15 years, contrasting this with Jersey's plans for new vessels. Dilcock emphasizes the importance of addressing these issues in the next political term to ensure effective and competitive transport links for the island.",
+        "url": "https://election2025.gg/candidates/browse/adrian-dilcock/"
+      },
+      {
+        "name": "David Dorrity",
+        "text": "David Dorrity emphasizes the importance of improving Guernsey's connectivity to support both residents and the business sector. He acknowledges the challenges faced by the Condor/Brittany Ferries agreement but notes its positive impact on tourism. Regarding Aurigny, the island's airline, Dorrity highlights its financial struggles and suggests exploring partnerships with larger firms to enhance service reliability and reduce costs. He advises against extending the runway until necessary resurfacing is due, as it may not attract budget airlines. Overall, Dorrity stresses the need for sustainable solutions to address the island's transport issues.",
+        "url": "https://election2025.gg/candidates/browse/david-dorrity/"
+      },
+      {
+        "name": "Andrea Dudley-Owen",
+        "text": "Andrea Dudley-Owen's main policy points on transport focus on maintaining and investing in resilient sea and air links to support Guernsey's connectivity. Additionally, she emphasizes the need for continued focus on traffic management and enhanced public transport to improve the island's transportation infrastructure.",
+        "url": "https://election2025.gg/candidates/browse/andrea-dudley-owen/"
+      },
+      {
+        "name": "John Dyke",
+        "text": "John Dyke's main policy points on transport focus on improving connectivity and infrastructure while ensuring cost-effectiveness. He advocates for cooperation with Jersey to establish a single air traffic control system for the Channel Islands, which could enhance efficiency. Dyke also suggests exploring the feasibility of a connection to Heathrow, which could benefit the hospitality and finance sectors, and supports maintaining Aurigny with necessary adjustments. Additionally, he proposes a serious review of implementing an Engineered Materials Arrest System (EMAS) at the eastern end of the runway to improve safety and connectivity. Dyke emphasizes the need for investment around harbors to support business development and flood defenses. He also supports improving cycleways with segregated paths to enhance safety for pedestrians, cyclists, and drivers.",
+        "url": "https://election2025.gg/candidates/browse/john-dyke/"
+      },
+      {
+        "name": "Simon Fairclough",
+        "text": "Simon Fairclough, a current Deputy and member of the Committee for the Environment & Infrastructure, emphasizes the importance of transport as a key priority for Guernsey. He advocates for collaborative leadership and efficient decision-making to unlock the island's potential, including in the transport sector. Fairclough stresses the need for investment in key infrastructure, which has been a barrier to economic growth. He proposes shifting focus from strategy to delivery by simplifying procurement processes and redeploying resources to have the greatest impact. He underscores the importance of balancing development with the protection of the natural environment and heritage.",
+        "url": "https://election2025.gg/candidates/browse/simon-fairclough/"
+      },
+      {
+        "name": "Steve Falla",
+        "text": "The provided extract does not contain any specific information on Steve Falla's policy views regarding transport.",
+        "url": "https://election2025.gg/candidates/browse/steve-falla/"
+      },
+      {
+        "name": "Peter Ferbrache",
+        "text": "Peter Ferbrache's policy views on transport emphasize the need for significant investment in Guernsey's infrastructure, particularly the harbors, which require millions in funding for improvements. He advocates for a pragmatic approach to addressing the island's fiscal challenges, acknowledging that there are no easy solutions. Ferbrache stresses the importance of providing the Guernsey Development Agency with the necessary tools to enhance infrastructure development while minimizing bureaucratic interference. He also highlights the need to cut down on waste and ensure that any procedures, rules, and regulations are enacted only if absolutely necessary.",
+        "url": "https://election2025.gg/candidates/browse/peter-ferbrache/"
+      },
+      {
+        "name": "Adrian Gabriel",
+        "text": "Adrian Gabriel's transport policy focuses on improving Guernsey's infrastructure to enhance residents' quality of life. He emphasizes the importance of developing the eastern seaboard, including the Guernsey Development Agency and harbors, as essential for economic growth and creating new opportunities. Gabriel supports the Bridge regeneration project to revitalize the area, boost local businesses, and improve residents' quality of life. He is committed to ensuring these developments are sustainable and involve community input.",
+        "url": "https://election2025.gg/candidates/browse/adrian-gabriel/"
+      },
+      {
+        "name": "Susie Gallienne",
+        "text": "Susie Gallienne's views on transport focus on ensuring that Guernsey's supply lines, including ports and the airport, are fit for purpose into the future. She emphasizes the importance of continuing work to maintain and improve these critical infrastructures to support the community's needs.",
+        "url": "https://election2025.gg/candidates/browse/susie-gallienne/"
+      },
+      {
+        "name": "Kerensa Gardner",
+        "text": "The provided extract does not contain any specific policy points made by candidate Kerensa Gardner on the topic of transport. The focus is primarily on education, housing, taxation, and health.",
+        "url": "https://election2025.gg/candidates/browse/kerensa-gardner/"
+      },
+      {
+        "name": "Sally Gilman",
+        "text": "Sally Gilman's policy views on transport focus on the urgent need for reform in Guernsey's travel and tourism systems. She emphasizes the importance of addressing the challenges faced by these sectors to ensure they thrive again. While specific transport initiatives are not detailed, her broader agenda includes cutting waste, managing budgets responsibly, and ensuring transparency and accountability in government actions related to these areas.",
+        "url": "https://election2025.gg/candidates/browse/sally-gilman/"
+      },
+      {
+        "name": "John Gollop",
+        "text": "John Gollop, a candidate with no party affiliation, emphasizes practical and common-sense transport policies for Guernsey. He supports expanding and enhancing air and sea transport links with Jersey, the UK, and Europe as a means to boost economic growth. Gollop advocates for banning noisy motorbikes and raising the minimum age for riding motorbikes from 14 to 16. As President of Living Streets, he is committed to improving pedestrian safety and the green lane environment. His approach balances economic considerations with environmental sustainability.",
+        "url": "https://election2025.gg/candidates/browse/john-gollop/"
+      },
+      {
+        "name": "David Goy",
+        "text": "David Goy's transport policy focuses on enhancing Guernsey's connectivity and infrastructure. He proposes expanding the airport to extend the runway for cargo flights and adding direct routes to more countries. This expansion aims to attract logistics companies and support manufacturers who rely on air freight, which the current setup does not accommodate. Goy's approach is part of a broader strategy to diversify Guernsey's economy and improve its resilience in the face of global uncertainties.",
+        "url": "https://election2025.gg/candidates/browse/david-goy/"
+      },
+      {
+        "name": "Luke Graham",
+        "text": "The extract does not provide specific policy points made by candidate Luke Graham on the topic of transport.",
+        "url": "nan"
+      },
+      {
+        "name": "Sarah Hansmann Rouxel",
+        "text": "Sarah Hansmann Rouxel's policy views on transport focus on enhancing connectivity and supporting sustainable growth. She emphasizes the importance of strengthening air, sea, and digital connectivity as part of a smarter economic growth strategy. Additionally, she advocates for the delivery of the Harbour Action Plan, which suggests a commitment to improving maritime infrastructure. These measures are aimed at boosting productivity, innovation, and overall economic resilience in Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/sarah-hansmann-rouxel/"
+      },
+      {
+        "name": "Rob Harnish",
+        "text": "Rob Harnish emphasizes the importance of improving public transport as part of his policy priorities. He engages with the Environment & Infrastructure department regarding public transport, aiming to find cost-effective solutions to local transportation issues. Harnish advocates for practical, long-term solutions over short-term fixes, focusing on transparency and integrity in decision-making to enhance public trust.",
+        "url": "https://election2025.gg/candidates/browse/rob-harnish/"
+      },
+      {
+        "name": "Sam Haskins",
+        "text": "Candidate Sam Haskins emphasizes the importance of reliable and affordable transport links for Guernsey, particularly focusing on the need for a dependable airline and ferry service. He views these transport links as essential lifelines and economic enablers or disablers. Haskins also suggests that regular, reliable, and cost-effective travel to Jersey could enhance affordability and maintain route options, benefiting both islands by addressing the issue of scale.",
+        "url": "https://election2025.gg/candidates/browse/sam-haskins/"
+      },
+      {
+        "name": "Mark Helyar",
+        "text": "The provided extract does not contain any specific information or policy points made by candidate Mark Helyar on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/mark-helyar/"
+      },
+      {
+        "name": "Rosie Henderson",
+        "text": "Rosie Henderson emphasizes the importance of Guernsey's airline as a vital lifeline, highlighting key routes such as Guernsey to Southampton, Alderney, Jersey, and Gatwick as essential. She advocates for the efficient operation of the airline with standardized aircraft to save time and money, and suggests that government input should be minimized to allow management to handle operations effectively.",
+        "url": "https://election2025.gg/candidates/browse/rosie-henderson/"
+      },
+      {
+        "name": "Rhona Humphreys",
+        "text": "Rhona Humphreys, as part of the Forward Guernsey party, supports policies aimed at improving Guernsey's transport infrastructure. Key transport-related policies include investing to ensure reliable and affordable inter-island and UK sea and air connectivity. This investment aims to enhance transportation links, facilitating easier movement for residents and supporting economic growth.",
+        "url": "https://election2025.gg/candidates/browse/rhona-humphreys/"
+      },
+      {
+        "name": "Neil Inder",
+        "text": "Neil Inder's main policy points on transport focus on securing and improving Guernsey's ferry services. He emphasizes his role in appointing Brittany Ferries to ensure consistent and reliable ferry operations, particularly during financial challenges faced by Condor and potential disruptions from Jersey's actions. Inder highlights the importance of maintaining ferry services for Guernsey's supply chains and tourism, showcasing his commitment to pragmatic decision-making over idealism.",
+        "url": "https://election2025.gg/candidates/browse/neil-inder/"
+      },
+      {
+        "name": "Stuart Jehan",
+        "text": "Stuart Jehan, a candidate from Forward Guernsey, emphasizes the importance of reliable and affordable transport connectivity for Guernsey. His transport policy focuses on investing in inter-island and UK sea and air connectivity to ensure consistent and cost-effective travel options. Jehan supports allowing private investment and expertise in public infrastructure projects to expedite and reduce the cost of such developments. These initiatives aim to strengthen Guernsey's economy and improve accessibility for islanders.",
+        "url": "https://election2025.gg/candidates/browse/stuart-jehan/"
+      },
+      {
+        "name": "Bruno Kay-Mouat",
+        "text": "Bruno Kay-Mouat emphasizes the need for reliable and affordable transport connectivity for Guernsey, highlighting that current routes by sea and air are irregular, unreliable, and expensive. He advocates for strong inter-island connectivity, particularly with Jersey and the UK, and criticizes the existing system of subsidies for multiple transport operators without a cohesive strategy. Kay-Mouat calls for a clear plan to establish regular, affordable services that provide a pleasant travel experience, encouraging travel by choice rather than necessity.",
+        "url": "https://election2025.gg/candidates/browse/bruno-kay-mouat/"
+      },
+      {
+        "name": "Sasha Kazantseva-Miller",
+        "text": "Sasha Kazantseva-Miller's main policy points on transport focus on improving air travel reliability and affordability, and strengthening ferry links with France. She proposes delivering a new Air Policy Framework to reduce reliance on Aurigny, attracting a new operator for a Heathrow route, and exploring small-plane options for inter-island travel. Additionally, she suggests unlocking development at the airport, such as hotels and high-value storage, and lowering air travel costs through reduced airport fees, PSO routes, or operational efficiencies.",
+        "url": "https://election2025.gg/candidates/browse/sasha-kazantseva-miller/"
+      },
+      {
+        "name": "Marc Laine",
+        "text": "Marc Laine's main policy points on transport focus on improving connectivity and addressing issues with Aurigny, the local airline. He supports efforts to reintroduce a Heathrow route, believing it will benefit locals, visitors, and businesses by enhancing reliability and access. Laine expresses concern over the expected significant financial losses at Aurigny and emphasizes the need to understand and mitigate these losses, acknowledging the challenge of breaking even while maintaining essential lifeline services.",
+        "url": "https://election2025.gg/candidates/browse/marc-laine/"
+      },
+      {
+        "name": "Ross Le Brun",
+        "text": "Ross Le Brun's main policy points on transport focus on creating safer and more sustainable travel options in Guernsey. He proposes:\n\n1. Developing safer school routes with dedicated footpaths and cycle lanes to ensure children can walk or ride to school safely.\n2. Expanding and enforcing Rouettes Tranquilles for calm and safe travel.\n3. Including traffic safety in the Government Work Plan.\n4. Acting on public feedback from police and tourist reports regarding road dangers.\n5. Enhancing the bus service to make it a viable alternative to commuting in private vehicles.\n6. Introducing a practical e-bike share scheme to promote sustainable transport options.",
+        "url": "nan"
+      },
+      {
+        "name": "Christopher Le Tissier",
+        "text": "Christopher Le Tissier's main policy points on transport focus on the taxation of electric vehicles and the performance of Aurigny, Guernsey's airline. He advocates for the introduction of a fair system of taxation for electric vehicles by 2026, arguing that they should not be tax-exempt as they contribute to road wear and congestion like other vehicles. Additionally, he calls for a full review of Aurigny due to ongoing service issues, emphasizing the need for effective management and operational efficiency. He also highlights concerns about the lack of transparency in the ferry deal with Brittany Ferries, suggesting changes to the Civil Contingencies Authority rules to ensure public accountability.",
+        "url": "https://election2025.gg/candidates/browse/chris-le-tissier/"
+      },
+      {
+        "name": "Marc Leadbeater",
+        "text": "The provided extract does not include any specific policy points made by candidate Marc Leadbeater on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/marc-leadbeater/"
+      },
+      {
+        "name": "Mary Lowe",
+        "text": "Mary Lowe's main policy points on transport focus on improving connectivity and accessibility to and from Guernsey. She emphasizes the importance of reliable transport links for the island's economy, suggesting that the States should consider subsidizing or reducing fees at the airport and harbor to enhance economic benefits. Lowe advocates for more frequent inter-island ferry services that can accommodate vehicles, as the current once-a-week service is insufficient. She also highlights the impact of moving cruise line passengers, suggesting that tenders should revert to the ro-ro ramp side to facilitate easier access to town and support the retail and hospitality sectors. Additionally, Lowe stresses the need for the States to address reliability issues with Aurigny, the local airline, as its current performance is costly to the island.",
+        "url": "https://election2025.gg/candidates/browse/mary-lowe/"
+      },
+      {
+        "name": "Lexi Lundberg",
+        "text": "Lexi Lundberg's main policy points on transport focus on improving Guernsey's connectivity. She is committed to holding Aurigny accountable for providing reliable services to key hub airports and ensuring its fleet operates efficiently. Lundberg advocates for encouraging other operators to offer additional routes, such as a potential link to Heathrow, while maintaining competitive port and landing fees. She emphasizes the importance of good air links for medical travel, business, and personal connections, and believes Aurigny should deliver safe, reliable, and affordable travel options.",
+        "url": "https://election2025.gg/candidates/browse/lexi-lundberg/"
+      },
+      {
+        "name": "Paul Luxon",
+        "text": "Paul Luxon's main policy points on transport focus on improving Guernsey's air and sea connectivity. He emphasizes the necessity for excellent transport links, highlighting the importance of scheduling, frequency, and fair pricing. Luxon argues that inconsistent or inadequate transport options significantly impact residents and commerce. To address this, he advocates for strategic partnerships between the government and transport operators to ensure reliable and efficient connectivity for northern, southern, and inter-island routes.",
+        "url": "https://election2025.gg/candidates/browse/paul-luxon/"
+      },
+      {
+        "name": "Chris Machon",
+        "text": "Chris Machon's main policy points on transport focus on improving both physical and digital connectivity. He advocates for a comprehensive review of Aurigny to enhance reliability, cost control, and service quality. Machon emphasizes the importance of treating digital infrastructure as essential for business, healthcare, education, and daily life. Regarding Alderney Airport redevelopment, he proposes using aircraft with short take-off and landing capabilities to suit Alderney's needs, keeping the runway under 800 meters to minimize costs and disruption, and prioritizing long-term value and safety over unnecessary expansion.",
+        "url": "https://election2025.gg/candidates/browse/chris-machon/"
+      },
+      {
+        "name": "Munazza Malik",
+        "text": "Munazza Malik's main policy points on transport focus on improving Guernsey's air links. She advocates for defending open skies and conducting a comprehensive review of the island's air connectivity, including considering the option of EMAS (Engineered Materials Arrestor System), to enhance travel reliability, frequency, and affordability.",
+        "url": "https://election2025.gg/candidates/browse/munazza-malik/"
+      },
+      {
+        "name": "Aidan Matthews",
+        "text": "Aidan Matthews emphasizes the need for improved transport infrastructure in Guernsey. He highlights the complexity of decision-making due to divided responsibilities among committees and criticizes the current state of air and sea links, noting that while public ownership of Aurigny provides stability, persistent problems and high costs may require a new approach. Matthews suggests that harbors and the airport should be managed separately to enhance efficiency. He acknowledges the narrow and congested roads, advocating for improvements in alternative transport options rather than discouraging car use. Matthews also points out the dangers of many roads for pedestrians and cyclists, suggesting that some roads could be made safer with pavements or converted to one-way, while others might have increased speed limits. He opposes paid parking unless fair and convenient schemes are proposed and favors innovative solutions like congestion charging over parking fines.",
+        "url": "https://election2025.gg/candidates/browse/aidan-matthews/"
+      },
+      {
+        "name": "Carl Meerveld",
+        "text": "Carl Meerveld's main policy points on transport focus on improving travel connectivity in Guernsey. He emphasizes the importance of ensuring reliable transportation routes and making seats and freight affordable. Meerveld views improved connectivity as crucial for economic growth and maintaining the island's openness for business and family life.",
+        "url": "https://election2025.gg/candidates/browse/carl-meerveld/"
+      },
+      {
+        "name": "Tamara Menteshvilli",
+        "text": "The extract does not provide specific information on Tamara Menteshvilli's policy views regarding transport. Her manifesto primarily focuses on health/social care, education, and treasury functions, with an emphasis on strategic planning, community engagement, and collaborative governance.",
+        "url": "https://election2025.gg/candidates/browse/tamara-menteshvili/"
+      },
+      {
+        "name": "Jeremy Mercer",
+        "text": "Jeremy Mercer emphasizes the need for resilient and affordable travel options to and from Guernsey. His transport policy focuses on exploring solutions that ensure reliable and cost-effective connectivity for islanders.",
+        "url": "https://election2025.gg/candidates/browse/jeremy-mercer/"
+      },
+      {
+        "name": "Dianne Mitchell",
+        "text": "Dianne Mitchell's main policy points on transport focus on enhancing Guernsey's connectivity and accessibility. She emphasizes the need to sustain global connectivity, particularly prioritizing improvements in ports and airports to support business, sport, and tourism. Mitchell acknowledges gaps in ferry service provision and highlights the importance of securing reliable air travel for both Guernsey and Alderney. She advocates for policies that encourage fewer car journeys, making it easier and more enjoyable to navigate the island, while considering the mobility challenges of an aging population. Additionally, she stresses the importance of effectively marketing Guernsey's natural and cultural attractions to boost tourism.",
+        "url": "https://election2025.gg/candidates/browse/diane-mitchell/"
+      },
+      {
+        "name": "Nick Moakes",
+        "text": "Nick Moakes emphasizes the critical importance of reliable air and sea connectivity for Guernsey, highlighting that these links are essential for the island's social and economic well-being. He acknowledges recent achievements, such as securing a new sea connectivity agreement and establishing direct air links to London City and Paris. However, he expresses concern over disruptions in air connectivity and stresses the need for the government to ensure consistent, affordable, and frequent transport links. Moakes advocates for a government rethink on how best to achieve these goals to support families, businesses, and the tourism sector.",
+        "url": "https://election2025.gg/candidates/browse/nick-moakes/"
+      },
+      {
+        "name": "Tom Moore",
+        "text": "Tom Moore's transport policy views are not explicitly detailed in the provided extract. However, his background in sectors like aviation and ferries may inform his perspective on transportation issues. His overall approach emphasizes sustainability, fairness, and pragmatism, which could suggest a focus on efficient and equitable transport solutions for Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/tom-moore/"
+      },
+      {
+        "name": "Charlie Murray-Edwards",
+        "text": "Charlie Murray-Edwards advocates for reducing the number of cars on the island, suggesting a cap on the number of cars per household. He emphasizes the potential of E-bikes as an alternative, highlighting their sufficient cargo capacity. His approach to transport reflects a broader environmental concern, aiming to address climate change by reducing reliance on cars and promoting greener alternatives.",
+        "url": "https://election2025.gg/candidates/browse/charlie-murray-edwards/"
+      },
+      {
+        "name": "Andrew Niles",
+        "text": "Andrew Niles emphasizes the importance of enhancing Guernsey's transport connectivity as a critical enabler for the economy. He advocates for the development of the best possible air and sea links to support industry, community, and tourism. Niles believes that the government must decide whether travel should be operated commercially or as an economic enabler, with his preference being the latter to unlock economic growth.",
+        "url": "https://election2025.gg/candidates/browse/andrew-niles/"
+      },
+      {
+        "name": "Sofi Noakes",
+        "text": "Sofi Noakes, a candidate in the Guernsey election, emphasizes the importance of investing in reliable and affordable inter-island and UK sea and air connectivity as part of her transport policy. This investment aims to strengthen Guernsey's economy and ensure efficient transportation links for residents and visitors.",
+        "url": "https://election2025.gg/candidates/browse/sofi-noakes/"
+      },
+      {
+        "name": "David Nussbaumer",
+        "text": "David Nussbaumer's main policy points on transport include:\n\n1. Aurigny and Air Travel: He suggests that while the bus service is heavily supported, Aurigny should not be pressured to make a profit but should be run efficiently as a gateway to Guernsey. He advocates for obtaining more sustainable Heathrow slots and believes that fixed, lower fares would encourage air travel.\n\n2. Infrastructure: He proposes creating a deep-water berth for cruise liners and a non-tidal marina for larger pleasure boats, suggesting that private enterprise could fund these projects in exchange for long-term leases.\n\n3. Aircraft Fleet: Nussbaumer would replace the current Dorniers with better options and consider leasing a jet to enhance the flagship route, signaling that Guernsey is a jurisdiction that means business.\n\n4. Road Users Tax: He proposes reintroducing an annual road users tax for all vehicles, including petrol, diesel, and electric, in exchange for freezing fuel duty for four years.",
+        "url": "https://election2025.gg/candidates/browse/david-john-nussbaumer/"
+      },
+      {
+        "name": "Victoria Oliver",
+        "text": "Victoria Oliver emphasizes the need for reliable transport services in Guernsey, particularly focusing on the performance of Aurigny and Brittany Ferries. She highlights the importance of ensuring that flights and ferries operate as scheduled. Additionally, Oliver calls for a comprehensive review of motor tax to ensure all road users contribute fairly to infrastructure costs, especially with the increasing adoption of electric vehicles.",
+        "url": "https://election2025.gg/candidates/browse/victoria-oliver/"
+      },
+      {
+        "name": "George Oswald",
+        "text": "The provided extract does not contain any specific policy points or views from candidate George Oswald regarding transport. His manifesto primarily focuses on healthcare, social care reform, and taxation, among other issues. There is no mention of transport-related policies or proposals in the text provided.",
+        "url": "https://election2025.gg/candidates/browse/george-oswald/"
+      },
+      {
+        "name": "Jayne Ozanne",
+        "text": "Jayne Ozanne emphasizes the need to improve the resilience and reliability of Guernsey's core travel routes. She highlights the unpredictability and high costs associated with traveling on and off the island, which negatively impact holiday, business, and medical travel plans. Ozanne advocates for better consumer service and communication to enhance the island\u2019s reputation in a competitive market.",
+        "url": "https://election2025.gg/candidates/browse/jayne-ozanne/"
+      },
+      {
+        "name": "Charles Parkinson",
+        "text": "The provided extract does not contain any specific policy points made by Charles Parkinson on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/charles-parkinson/"
+      },
+      {
+        "name": "Rob Prow",
+        "text": "The provided manifesto extract does not specifically address transport policies. Rob Prow's manifesto focuses on broader governmental reforms, economic strategies, housing, public services, education, and safety and security. There is no mention of transport-related issues or proposals in the extract provided.",
+        "url": "https://election2025.gg/candidates/browse/rob-prow/"
+      },
+      {
+        "name": "Sally Rochester",
+        "text": "Sally Rochester's policy views on transport focus on integrating health planning into transport decisions, emphasizing the importance of considering transport as part of a broader strategy for long-term health outcomes and community wellbeing. She advocates for a collaborative, evidence-based approach to policy-making, which includes structured consultation with community and sector leaders, as well as open communication with the electorate. This approach aims to ensure that transport policies contribute to a healthier, more resilient community and economy.",
+        "url": "https://election2025.gg/candidates/browse/sally-rochester/"
+      },
+      {
+        "name": "Tom Rylatt",
+        "text": "Tom Rylatt's transport policy emphasizes the importance of investing in reliable and affordable inter-island and UK sea and air connectivity. He advocates for allowing private investment and expertise in public infrastructure projects to deliver these projects faster and more cost-effectively. Additionally, Rylatt supports the redevelopment of the St Sampson\u2019s Harbour area as part of the Guernsey Development Agency's plans. These initiatives are aimed at strengthening Guernsey\u2019s economy and ensuring efficient transport links for the island.",
+        "url": "https://election2025.gg/candidates/browse/tom-rylatt/"
+      },
+      {
+        "name": "Gavin St Pier",
+        "text": "Gavin St Pier, as part of the Forward Guernsey party, emphasizes the importance of investing in reliable and affordable inter-island and UK sea and air connectivity. This investment is aimed at strengthening Guernsey's economy and ensuring effective transportation links. The manifesto does not provide additional specific transport policies, but the focus on connectivity highlights the party's commitment to enhancing transport infrastructure as a means to support economic growth and accessibility.",
+        "url": "https://election2025.gg/candidates/browse/gavin-st-pier/"
+      },
+      {
+        "name": "Jennifer Strachan",
+        "text": "Jennifer Strachan's policy views on transport focus on updating Guernsey's harbour and exploring the potential for a wind farm. She emphasizes the importance of investing in infrastructure to stimulate economic growth and sees the development of natural assets as a means to create economic opportunities.",
+        "url": "https://election2025.gg/candidates/browse/jennifer-strachan/"
+      },
+      {
+        "name": "Nikki Symons",
+        "text": "Nikki Symons' manifesto does not explicitly address transport policies. However, her emphasis on collaboration, communication, and community engagement suggests she would likely support transport initiatives that involve public consultation and foster partnerships. Her focus on efficient government services and strategic prioritization may imply a preference for transport policies that are well-coordinated and address community needs effectively.",
+        "url": "https://election2025.gg/candidates/browse/nikki-symons/"
+      },
+      {
+        "name": "Lee Van Katwyk",
+        "text": "Lee Van Katwyk's manifesto does not explicitly address transport policy. His focus is on broader issues such as government reform, economic revival, housing, education, and support for pensioners and youth. There are no specific proposals or views related to transport mentioned in the provided extract.",
+        "url": "https://election2025.gg/candidates/browse/lee-van-katwyk/"
+      },
+      {
+        "name": "Simon Vermeulen",
+        "text": "Simon Vermeulen's main policy points on transport focus on enhancing connectivity and infrastructure. He has secured daily ferry links to France, advocated for a sea link to Jersey, and supported the rollout of high-speed broadband. Vermeulen has also proposed future-proofing Guernsey's runway with EMAS technology. His priorities include securing reliable and affordable air and sea links, reviewing Guernsey\u2019s air route policy, and improving island air resilience. He aims to push for direct air links to key hubs like Heathrow to boost economic growth and make Guernsey more attractive to carriers. Additionally, he emphasizes essential investment in harbors and airports, including the development of a deep-water berth to improve port resilience.",
+        "url": "https://election2025.gg/candidates/browse/simon-vermeulen/"
+      },
+      {
+        "name": "Steven Wall",
+        "text": "The provided extract does not contain specific policy points made by candidate Steven Wall on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/steven-wall/"
+      },
+      {
+        "name": "Steve Williams",
+        "text": "Steve Williams' policy views on transport focus on improving air connectivity for Guernsey. He highlights the need for action to address the reliability and cost issues of current air services. Williams suggests growing the market by including other airlines and conducting a realistic appraisal of options to extend the airport runway.",
+        "url": "https://election2025.gg/candidates/browse/steve-williams/"
+      },
+      {
+        "name": "Heidi Almonte",
+        "text": "Heidi Almonte's main policy points on transport focus on reducing traffic congestion and promoting alternative modes of transportation. She suggests that while cars are essential for many, walking and cycling should be encouraged to ease traffic, improve health, and benefit the environment. Almonte proposes the creation of a named walk/cycle path around the island, complete with a 'Passport' system to track completed sections, which could also serve as a tourism attraction.",
+        "url": "https://election2025.gg/candidates/browse/heidi-salsa-almonte/"
+      },
+      {
+        "name": "Kerry Barnfather",
+        "text": "Kerry Barnfather's manifesto does not explicitly outline specific transport policies. However, she emphasizes the importance of action, collaboration, and transparency in addressing issues, which could be applied to transport. Barnfather advocates for realistic, fair, and sustainable policies developed through collaboration with all stakeholders, suggesting a potential approach to transport policy that involves inclusive dialogue and practical solutions.",
+        "url": "https://election2025.gg/candidates/browse/kerry-barnfather/"
+      },
+      {
+        "name": "Chris Blin",
+        "text": "Chris Blin, as Vice-President of the Transport and Licensing Authority, has been involved in determining applications for air route licenses and managing transport licensing and regulatory functions. However, due to the suspension of air route license requirements since 2018, largely because of the Open Skies policy, he suggests considering the suspension of this committee to simplify States operations. Additionally, Blin emphasizes the importance of strengthening air and sea links to boost trade and tourism as part of his broader economic growth strategy.",
+        "url": "https://election2025.gg/candidates/browse/chris-blin/"
+      },
+      {
+        "name": "Yvonne Burford",
+        "text": "The extract provided does not contain specific policy points made by Yvonne Burford on the topic of transport. To summarize her views on transport, additional information from her manifesto or public statements would be necessary.",
+        "url": "https://election2025.gg/candidates/browse/yvonne-burford/"
+      },
+      {
+        "name": "Andy Cameron",
+        "text": "Candidate Andy Cameron's main policy points on transport focus on improving air and sea links and enhancing digital infrastructure related to transportation. He highlights his support for digital advancements such as the Guernsey Taxi App and live bus timetabling on Google Maps, which were launched just before the Island Games. Cameron emphasizes the importance of including technologically knowledgeable individuals in the Assembly to harness the potential of advancements like artificial intelligence for the benefit of Guernsey's transport infrastructure.",
+        "url": "https://election2025.gg/candidates/browse/andy-cameron/"
+      },
+      {
+        "name": "Haley Camp",
+        "text": "The extract does not provide specific policy points made by candidate Haley Camp on the topic of transport. Her manifesto primarily focuses on economic growth, education, housing, and efficient government operations. There is no mention of transport-related policies in the provided text.",
+        "url": "https://election2025.gg/candidates/browse/haley-camp/"
+      },
+      {
+        "name": "Tony Corbin",
+        "text": "Tony Corbin's manifesto does not explicitly mention transport policies. However, his involvement in community services, such as founding a Special Needs Shopping Bus Service and serving as a volunteer driver, indicates a commitment to accessible transportation solutions for vulnerable groups.",
+        "url": "https://election2025.gg/candidates/browse/tony-corbin/"
+      },
+      {
+        "name": "Rob Curgenven",
+        "text": "Rob Curgenven's manifesto does not explicitly address transport policies. The extract provided focuses on his views on financial strategies, housing, government transparency, and community engagement, but does not mention specific transport-related initiatives or proposals.",
+        "url": "https://election2025.gg/candidates/browse/rob-curgenven/"
+      },
+      {
+        "name": "David De Lisle",
+        "text": "David De Lisle's main policy points on transport focus on ensuring reliable, sustainable, and affordable air and sea links, which are essential for travel freedom and supporting the economy through tourism. He emphasizes the importance of adequate parking in town centers to support residents and businesses. De Lisle also advocates for sensitive regeneration in St Peter Port and the Bridge to enhance town vibrancy and footfall. Additionally, he has placed a requ\u00eate to reduce mooring fees and ensure fair consultations with boat owners and marine traders regarding future fee increases.",
+        "url": "https://election2025.gg/candidates/browse/david-de-lisle/"
+      },
+      {
+        "name": "Lindsay de Sausmarez",
+        "text": "Lindsay de Sausmarez emphasizes a strategic, long-term approach to transport policy, focusing on reducing traffic impact and improving access to green spaces. She has been instrumental in modernizing and streamlining processes for taxis and buses, as well as creating a new driving license category to support charities. Her work includes maintaining roads with a focus on cost efficiency and ensuring coastal defences remain secure. Additionally, she has contributed to initiatives like School Streets, which aim to make children's journeys safer.",
+        "url": "https://election2025.gg/candidates/browse/lindsay-de-sausmarez/"
+      },
+      {
+        "name": "Adrian Dilcock",
+        "text": "Adrian Dilcock emphasizes the importance of addressing Guernsey's transport issues, particularly focusing on air and sea links. He notes the challenges posed by the state's ownership of the airline, which has suffered significant financial losses and has a history of unreliability and high costs compared to competitors. Dilcock also highlights concerns about the aging sea vessels, emphasizing the need for their timely replacement to ensure reliable sea travel and freight services. He stresses that the next States must prioritize these transport issues to prevent further deterioration of the island's connectivity and economic competitiveness.",
+        "url": "https://election2025.gg/candidates/browse/adrian-dilcock/"
+      },
+      {
+        "name": "David Dorrity",
+        "text": "David Dorrity's policy views on transport focus on improving Guernsey's connectivity and addressing issues with the island's airline, Aurigny. He acknowledges the importance of reliable and affordable air links for both residents and businesses. Dorrity suggests exploring partnerships with larger airlines to improve service and efficiency, questioning the feasibility of Guernsey operating its own commercial airline. He also mentions the potential benefits and challenges of extending the runway to attract budget airlines, but notes that this should only be considered when resurfacing is needed in the future. Dorrity advocates for a comprehensive review of Aurigny to find sustainable solutions, as the airline's current financial losses are unsustainable.",
+        "url": "https://election2025.gg/candidates/browse/david-dorrity/"
+      },
+      {
+        "name": "Andrea Dudley-Owen",
+        "text": "Andrea Dudley-Owen emphasizes the importance of investing in and maintaining resilient sea and air links as part of her transport policy. She also advocates for a continued focus on traffic management and enhanced public transport to improve transportation infrastructure in Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/andrea-dudley-owen/"
+      },
+      {
+        "name": "John Dyke",
+        "text": "John Dyke's policy views on transport focus on improving connectivity and infrastructure efficiency. He advocates for better airline connectivity to support economic growth, suggesting a potential connection to Heathrow as ideal. Dyke also proposes cooperation with Jersey to streamline air traffic control systems across the Channel Islands. Additionally, he supports the development of segregated cycle paths around Guernsey's coasts to enhance safety and usability for cyclists, pedestrians, and drivers.",
+        "url": "https://election2025.gg/candidates/browse/john-dyke/"
+      },
+      {
+        "name": "Simon Fairclough",
+        "text": "Simon Fairclough, as an active member of the Committee for Environment & Infrastructure, has been involved in improving transport services in Guernsey. He has worked closely with the island's taxi industry to enhance community services and has successfully negotiated and transitioned to a new bus contract.",
+        "url": "https://election2025.gg/candidates/browse/simon-fairclough/"
+      },
+      {
+        "name": "Steve Falla",
+        "text": "The provided extract does not contain specific policy points related to transport from candidate Steve Falla. The focus is on other areas such as housing, tax, the economy, education, and health.",
+        "url": "https://election2025.gg/candidates/browse/steve-falla/"
+      },
+      {
+        "name": "Peter Ferbrache",
+        "text": "Peter Ferbrache's transport policy focuses on the need for significant investment in Guernsey's infrastructure, particularly the harbors, which require millions in funding. He emphasizes the necessity of bold decision-making and acting upon those decisions to address infrastructure needs. Ferbrache also highlights the importance of balancing environmental protection with infrastructure development, ensuring that the island's beauty is preserved while meeting its infrastructure demands. He advocates for a more efficient government structure to facilitate these improvements and reduce waste.",
+        "url": "https://election2025.gg/candidates/browse/peter-ferbrache/"
+      },
+      {
+        "name": "Adrian Gabriel",
+        "text": "Adrian Gabriel's policy views on transport focus on improving Guernsey's infrastructure to enhance residents' quality of life. He emphasizes the need for sustainable development of the eastern seaboard, including projects like the Guernsey Development Agency (GDA) and harbour improvements, which are seen as vital for economic growth. Gabriel also supports the Bridge regeneration project, aiming to revitalize the area, boost local businesses, and improve living conditions. His commitment to these initiatives reflects his dedication to ensuring developments are sustainable and community-driven.",
+        "url": "https://election2025.gg/candidates/browse/adrian-gabriel/"
+      },
+      {
+        "name": "Susie Gallienne",
+        "text": "Susie Gallienne emphasizes the importance of maintaining and improving Guernsey's supply lines by ensuring that the island's ports and airport are fit for future needs. She highlights the necessity of continuing work on transport infrastructure to support the community and economy.",
+        "url": "https://election2025.gg/candidates/browse/susie-gallienne/"
+      },
+      {
+        "name": "Kerensa Gardner",
+        "text": "The extract does not provide any specific policy points or views from candidate Kerensa Gardner on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/kerensa-gardner/"
+      },
+      {
+        "name": "Sally Gilman",
+        "text": "Sally Gilman emphasizes the need for urgent reform in Guernsey's travel and tourism systems. She highlights the importance of decisive action to address the challenges faced by the sector to ensure it thrives again. While her manifesto primarily focuses on social care, housing, and employment, she acknowledges that the travel and tourism sector requires attention to improve its current state.",
+        "url": "https://election2025.gg/candidates/browse/sally-gilman/"
+      },
+      {
+        "name": "John Gollop",
+        "text": "John Gollop's transport policy focuses on enhancing connectivity and reducing congestion in Guernsey. He advocates for a low-fare or potentially free bus service, especially for disabled and less well-off individuals, with increased frequency and new routes, including a night service. Gollop also supports the development of an integrated Transport department or ministry to streamline efforts. He emphasizes the importance of investing in ports and choosing a new harbour, with a preference for St Peter Port. Additionally, he supports frequent inter-island air links and wishes to see regular flights to various French cities. Gollop is open to collaboration between Aurigny and Blue Islands airlines to improve regional connectivity.",
+        "url": "https://election2025.gg/candidates/browse/john-gollop/"
+      },
+      {
+        "name": "David Goy",
+        "text": "David Goy's transport policy focuses on enhancing Guernsey's infrastructure to support economic diversification and improve logistics. He proposes extending the airport runway to facilitate cargo flights and establish direct routes to more countries, which aims to attract logistics companies and support manufacturers who rely on air freight. This is part of a broader strategy to diversify Guernsey's economy beyond finance by enabling new export-based industries.",
+        "url": "https://election2025.gg/candidates/browse/david-goy/"
+      },
+      {
+        "name": "Sarah Hansmann Rouxel",
+        "text": "Sarah Hansmann Rouxel's transport policy emphasizes the importance of connectivity as a vital component of Guernsey's economic and community life. She advocates for a comprehensive reassessment of Guernsey's connectivity infrastructure, including air, sea, and digital networks, to ensure they meet the needs of Islanders and the economy. Key priorities include:\n\n1. **Harbour and Port Infrastructure Renewal**: Implementing the Harbour Action Plan to update and improve port facilities.\n   \n2. **Sustainable and Affordable Sea Links**: Ensuring reliable and cost-effective sea connections between the islands and to the UK.\n\n3. **Strengthening Air Routes**: Maintaining essential air services without compromising affordability or community needs.\n\n4. **Tourism Strategy**: Developing a joined-up tourism strategy to support local businesses and sustain demand for air and sea links.\n\n5. **Aurigny Airline**: Providing Aurigny with strategic direction to meet long-term needs and addressing public confidence issues.\n\nOverall, her policy focuses on making transport infrastructure resilient, sustainable, and accessible to support economic growth and community connectivity.",
+        "url": "https://election2025.gg/candidates/browse/sarah-hansmann-rouxel/"
+      },
+      {
+        "name": "Rob Harnish",
+        "text": "Candidate Rob Harnish emphasizes the importance of improving public transport as part of his policy priorities. He has engaged with the Environment & Infrastructure department regarding enhancing public transport systems. Harnish advocates for practical, long-term solutions and aims to ensure that public transport improvements are cost-effective and inclusive, reflecting the needs of the community.",
+        "url": "https://election2025.gg/candidates/browse/rob-harnish/"
+      },
+      {
+        "name": "Sam Haskins",
+        "text": "Sam Haskins emphasizes the importance of reliable and affordable transport links for Guernsey, particularly focusing on the need for a dependable airline and ferry services. He views these transport links as essential lifelines that also serve as economic enablers. Haskins suggests that regular, reliable, and cost-effective travel to Jersey could enhance affordability and maintain route options, benefiting both islands by addressing scale limitations.",
+        "url": "https://election2025.gg/candidates/browse/sam-haskins/"
+      },
+      {
+        "name": "Rosie Henderson",
+        "text": "Rosie Henderson emphasizes the importance of Guernsey's airline as a critical lifeline, advocating for efficient operations with standardized aircraft to save on costs and maintenance. She identifies key routes, including Guernsey to Southampton, Alderney, Jersey, and Gatwick, as essential, while suggesting that other routes should only be pursued if economically viable. Henderson supports leaving the management of the airline to experts, with minimal interference from government deputies.",
+        "url": "https://election2025.gg/candidates/browse/rosie-henderson/"
+      },
+      {
+        "name": "Rhona Humphreys",
+        "text": "Rhona Humphreys emphasizes the importance of sustainable transport solutions in her campaign for the 2025 Guernsey election. She advocates for long-term, forward-looking changes to the island's transport infrastructure, reflecting her commitment to reducing reliance on cars. As an avid cyclist, she personally endorses the use of electric bikes, highlighting their potential to replace car journeys and reduce traffic congestion. Her transport policy aligns with the broader goals of Forward Guernsey, aiming to create a more sustainable and accessible environment for future generations.",
+        "url": "https://election2025.gg/candidates/browse/rhona-humphreys/"
+      },
+      {
+        "name": "Neil Inder",
+        "text": "Neil Inder's main policy points on transport focus on securing and maintaining Guernsey's ferry services. He highlights his role in negotiating and ensuring the continuity of ferry operations, particularly during financial crises and political challenges involving Condor and Brittany Ferries. Inder emphasizes his pragmatic approach to safeguarding these essential transport links, which are crucial for the island's supply chains.",
+        "url": "https://election2025.gg/candidates/browse/neil-inder/"
+      },
+      {
+        "name": "Bruno Kay-Mouat",
+        "text": "Bruno Kay-Mouat emphasizes the need for reliable and affordable transport connectivity for Guernsey, highlighting the current issues with irregular, unreliable, and expensive routes between the islands and the UK. He advocates for a strong inter-island transport strategy that includes regular and pleasant services, reducing the necessity-driven nature of travel. Bruno criticizes the current practice of subsidizing multiple competing transport operators without a cohesive plan and calls for a clear, strategic approach to improve transport services.",
+        "url": "https://election2025.gg/candidates/browse/bruno-kay-mouat/"
+      },
+      {
+        "name": "Sasha Kazantseva-Miller",
+        "text": "Sasha Kazantseva-Miller's transport policy focuses on improving the reliability and affordability of air travel and strengthening ferry links with France. She emphasizes the importance of connectivity as a priority theme to build economic resilience in Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/sasha-kazantseva-miller/"
+      },
+      {
+        "name": "Marc Laine",
+        "text": "Marc Laine's transport policy focuses on improving connectivity and addressing issues with local airline Aurigny. He supports efforts to reintroduce a Heathrow route, which he believes will benefit locals, visitors, and businesses by enhancing Guernsey's connectivity. Laine also acknowledges the financial challenges faced by Aurigny, emphasizing the need to understand and address the airline's significant losses to prevent future occurrences.",
+        "url": "https://election2025.gg/candidates/browse/marc-laine/"
+      },
+      {
+        "name": "Andy Le Lievre",
+        "text": "The provided extract does not contain any specific policy points made by candidate Andy Le Lievre on the topic of transport. His manifesto primarily focuses on issues related to housing, social welfare, education, and environmental protection, but does not address transport policies.",
+        "url": "https://election2025.gg/candidates/browse/andrew-le-lievre/"
+      },
+      {
+        "name": "Christopher Le Tissier",
+        "text": "Christopher Le Tissier's transport policy focuses on two main areas: taxation of electric vehicles (EVs) and the performance of Aurigny, the local airline. He advocates for the introduction of a tax on EVs by 2026, arguing that they should not be tax-exempt as they contribute to road wear and congestion like any other vehicle. Additionally, Le Tissier calls for a comprehensive review of Aurigny due to ongoing issues with service reliability, including delays and cancellations. He emphasizes the need for effective management to ensure the airline operates efficiently and in the best interests of Guernsey residents. Furthermore, he seeks more transparency regarding the ferry deal with Brittany Ferries, particularly concerning the purchase of the Islander vessel, and aims to change the rules of the Civil Contingencies Authority to allow for greater disclosure of such information.",
+        "url": "https://election2025.gg/candidates/browse/chris-le-tissier/"
+      },
+      {
+        "name": "Marc Leadbeater",
+        "text": "The extract provided does not contain any specific policy points made by candidate Marc Leadbeater on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/marc-leadbeater/"
+      },
+      {
+        "name": "Mary Lowe",
+        "text": "Mary Lowe emphasizes the importance of improving transport connectivity to support Guernsey's economy. She advocates for recognizing the airport and harbour as crucial gateways and suggests that subsidizing or reducing fees could be beneficial, as the increased visitor spending would offset the costs. Lowe highlights the need for more frequent inter-island ferry services, as the current once-a-week vehicle ferry is insufficient. She also points out the negative impact of moving cruise line passengers to the Albert pier, suggesting a return to the ro-ro ramp side to encourage visitors to explore the town, thereby benefiting the retail and hospitality sectors. Additionally, Lowe calls for addressing reliability issues with Aurigny, as these are detrimental to the island.",
+        "url": "https://election2025.gg/candidates/browse/mary-lowe/"
+      },
+      {
+        "name": "Lexi Lundberg",
+        "text": "Lexi Lundberg, an independent candidate in the Guernsey election, emphasizes improving the island's transport connectivity. She is committed to holding Aurigny, the local airline, accountable for providing reliable services to key hub airports, ensuring its operations are efficiently managed. Lundberg advocates for encouraging other operators to establish additional routes, such as a potential link to Heathrow, while maintaining competitive port and landing fees. She believes that robust air links are essential for medical travel, business, and personal connections, and sees Aurigny as crucial in delivering safe, reliable, and affordable travel options for islanders.",
+        "url": "https://election2025.gg/candidates/browse/lexi-lundberg/"
+      },
+      {
+        "name": "Chris Machon",
+        "text": "Chris Machon's main policy points on transport focus on improving both physical and digital connectivity in Guernsey. He advocates for a comprehensive review of Aurigny to enhance reliability, cost control, and service quality. He emphasizes the importance of treating digital infrastructure as essential for business, healthcare, education, and daily life. Regarding Alderney Airport, Machon proposes a practical approach to redevelopment, suggesting the use of aircraft with short take-off and landing (STOL) capabilities and keeping the runway under 800 meters to minimize costs and disruption. His vision prioritizes long-term value and safety over unnecessary expansion.",
+        "url": "https://election2025.gg/candidates/browse/chris-machon/"
+      },
+      {
+        "name": "Munazza Malik",
+        "text": "Munazza Malik's transport policy focuses on enhancing air connectivity and improving travel reliability, frequency, and affordability. She advocates for defending open skies and conducting a comprehensive review of Guernsey\u2019s air links, including considering the option of EMAS (Engineered Materials Arrestor System). Malik also supports the Seafront Enhancement Area (SEA) programme, which aims to benefit both residents and visitors by improving infrastructure.",
+        "url": "https://election2025.gg/candidates/browse/munazza-malik/"
+      },
+      {
+        "name": "Aidan Matthews",
+        "text": "Aidan Matthews emphasizes the need for improvements in Guernsey's transport infrastructure. He acknowledges the complexity of decision-making due to divided responsibilities among committees. While public ownership of Aurigny provides stability, Matthews suggests a new approach may be needed if costs remain high. He advocates for separate management of harbours and the airport to enhance efficiency and believes boat owners should not subsidize the airport. Matthews supports improving alternatives to driving rather than frustrating drivers, and he calls for clearer prioritization of dangerous roads, suggesting some could benefit from added pavements or adjusted speed limits.",
+        "url": "https://election2025.gg/candidates/browse/aidan-matthews/"
+      },
+      {
+        "name": "Carl Meerveld",
+        "text": "Carl Meerveld emphasizes the importance of travel connectivity as a key policy area, viewing it as both an economic enabler and a social necessity. He stresses the need for reliable transportation routes and affordable seats and freight costs to ensure that Guernsey remains accessible for business and family life, thereby directly impacting the cost of living.",
+        "url": "https://election2025.gg/candidates/browse/carl-meerveld/"
+      },
+      {
+        "name": "Tamara Menteshvilli",
+        "text": "The extract provided does not contain specific policy points made by candidate Tamara Menteshvilli on the topic of transport. Her manifesto focuses on health/social care, education, and treasury functions, with no mention of transport-related policies.",
+        "url": "https://election2025.gg/candidates/browse/tamara-menteshvili/"
+      },
+      {
+        "name": "Jeremy Mercer",
+        "text": "Jeremy Mercer's main policy points on transport focus on exploring options for resilient and affordable travel to and from Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/jeremy-mercer/"
+      },
+      {
+        "name": "Dianne Mitchell",
+        "text": "Dianne Mitchell's transport policy focuses on sustaining global connectivity and enhancing tourism, with an early priority on improving ports and airports while considering environmental stability. She advocates for updating Guernsey's 2020 tourism plan to better market the island's natural beauty and cultural assets. Mitchell emphasizes the need to encourage fewer car journeys and improve the reliability of airplane services, which are crucial for business, sport, and tourism. She also highlights the importance of making town areas more attractive and accessible, particularly for those with mobility challenges, by enhancing public spaces and amenities.",
+        "url": "https://election2025.gg/candidates/browse/diane-mitchell/"
+      },
+      {
+        "name": "Nick Moakes",
+        "text": "Nick Moakes emphasizes the importance of reliable air and sea connectivity for Guernsey, highlighting that these links are crucial for the island's social and economic well-being. He acknowledges the successful signing of a new agreement for sea connectivity and the establishment of direct air links to London City and Paris. However, he expresses concern over disruptions in air connectivity and stresses the need for the government to ensure dependable and affordable transport links. Moakes advocates for a reevaluation of strategies to maintain and enhance these essential connections.",
+        "url": "https://election2025.gg/candidates/browse/nick-moakes/"
+      },
+      {
+        "name": "Tom Moore",
+        "text": "The extract provided does not contain any specific policy points made by candidate Tom Moore on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/tom-moore/"
+      },
+      {
+        "name": "Charlie Murray-Edwards",
+        "text": "Charlie Murray-Edwards advocates for reducing the number of cars on the island, suggesting a cap on cars per household. He emphasizes the potential of E-bikes as an alternative, highlighting their capacity for cargo and suggesting there's no longer an excuse for excessive car use.",
+        "url": "https://election2025.gg/candidates/browse/charlie-murray-edwards/"
+      },
+      {
+        "name": "Andrew Niles",
+        "text": "Andrew Niles emphasizes the importance of strong travel links for Guernsey, viewing connectivity as a crucial economic enabler. He advocates for the development of the best air and sea links to support industry, community, and tourism. Niles believes the government must decide whether travel should be operated commercially or as a means to stimulate economic growth, with a focus on enhancing connectivity to unlock potential growth for the island.",
+        "url": "https://election2025.gg/candidates/browse/andrew-niles/"
+      },
+      {
+        "name": "Sofi Noakes",
+        "text": "The provided extract does not contain specific policy points made by candidate Sofi Noakes on the topic of transport. The focus of the extract is on other issues such as housing, mental health care, LGBTQ+ rights, tourism, and worker rights, as well as general themes of empathy, government efficiency, and community support.",
+        "url": "https://election2025.gg/candidates/browse/sofi-noakes/"
+      },
+      {
+        "name": "David Nussbaumer",
+        "text": "David Nussbaumer's transport policy focuses on several key areas:\n\n1. **Aurigny and Air Travel**: Nussbaumer advocates for efficient operation of Aurigny, viewing it as a crucial gateway to Guernsey. He suggests leasing a jet for the flagship route and aims to secure more sustainable Heathrow slots with fixed, lower fares to encourage air travel.\n\n2. **Cruise and Pleasure Boats**: He proposes creating a deep-water berth for cruise liners and a non-tidal marina for larger pleasure boats, funded by private enterprise through long-term leases.\n\n3. **Vehicle Taxation**: Nussbaumer supports reintroducing an annual road users tax for all vehicles, including petrol, diesel, and electric, with a promise to freeze fuel duty for four years.\n\n4. **Public Transport**: He questions why Aurigny is expected to be profitable when the bus service receives substantial support, implying a need for a balanced approach to public transport funding.\n\n5. **Aircraft Fleet**: He suggests replacing the current Dorniers with better options to improve air travel services.",
+        "url": "https://election2025.gg/candidates/browse/david-john-nussbaumer/"
+      },
+      {
+        "name": "Victoria Oliver",
+        "text": "Victoria Oliver's transport policy focuses on ensuring reliable transportation services and fair infrastructure costs. She emphasizes the importance of dependable operations from Aurigny and Brittany Ferries, highlighting the expectation that flights and ferries should run as scheduled. Additionally, she calls for a comprehensive review of motor tax to ensure all road users contribute fairly to infrastructure costs, particularly as electric vehicle adoption increases. Oliver also advocates for investing in local renewable energy to reduce long-term energy costs and import reliance.",
+        "url": "https://election2025.gg/candidates/browse/victoria-oliver/"
+      },
+      {
+        "name": "George Oswald",
+        "text": "The extract does not provide specific information on George Oswald's policy views regarding transport.",
+        "url": "https://election2025.gg/candidates/browse/george-oswald/"
+      },
+      {
+        "name": "Jayne Ozanne",
+        "text": "Jayne Ozanne's policy views on transport focus on improving the resilience and reliability of Guernsey's core travel routes. She highlights the current unpredictability and high costs associated with traveling on and off the island, which affect holiday, business, and medical travel plans. Ozanne advocates for better consumer service and communication to enhance the island's connectivity and protect its reputation.",
+        "url": "https://election2025.gg/candidates/browse/jayne-ozanne/"
+      },
+      {
+        "name": "Rob Prow",
+        "text": "The extract provided does not specifically mention Rob Prow's policy views on transport. The focus is on broader issues such as government reform, economic challenges, safety and security, education, workforce upskilling, and the housing crisis. For specific transport policies, additional sources or sections of his manifesto would need to be consulted.",
+        "url": "https://election2025.gg/candidates/browse/rob-prow/"
+      },
+      {
+        "name": "Sally Rochester",
+        "text": "Sally Rochester's policy views on transport emphasize the integration of health planning into transport decisions as part of a broader strategy to improve long-term health outcomes. She advocates for using technology to enhance infrastructure planning, which includes transport, as part of a community-led, cross-sector long-term vision. This approach aims to ensure Guernsey remains prosperous, liveable, and competitive for future generations.",
+        "url": "https://election2025.gg/candidates/browse/sally-rochester/"
+      },
+      {
+        "name": "Tom Rylatt",
+        "text": "Tom Rylatt's policy views on transport focus on enhancing Guernsey's connectivity and infrastructure. He advocates for investing in reliable and affordable inter-island and UK sea and air connectivity to strengthen the island's economy. Additionally, Rylatt supports allowing private investment and expertise in public infrastructure projects, such as the redevelopment of the St Sampson\u2019s Harbour area, to deliver these projects more efficiently and cost-effectively.",
+        "url": "https://election2025.gg/candidates/browse/tom-rylatt/"
+      },
+      {
+        "name": "Gavin St Pier",
+        "text": "Gavin St Pier, as part of the Forward Guernsey party, emphasizes the importance of investing in reliable and affordable inter-island and UK connectivity as a key transport policy. This initiative is part of a broader strategy to strengthen Guernsey's economy and improve infrastructure, ensuring effective and efficient transport links that support the island's economic and social well-being.",
+        "url": "https://election2025.gg/candidates/browse/gavin-st-pier/"
+      },
+      {
+        "name": "Jennifer Strachan",
+        "text": "Jennifer Strachan's main policy points on transport focus on updating Guernsey's infrastructure to support economic growth. She emphasizes the need to invest in infrastructure, including updating the harbour, which is part of her broader strategy to develop the island's natural assets. Strachan also highlights the importance of reimagining tourism with an emphasis on Guernsey's unique heritage and natural environment, which would likely involve improvements in transport facilities to enhance accessibility and attractiveness for visitors.",
+        "url": "https://election2025.gg/candidates/browse/jennifer-strachan/"
+      },
+      {
+        "name": "Nikki Symons",
+        "text": "Nikki Symons' manifesto does not explicitly outline specific policies related to transport. Her emphasis is on pragmatic, collaborative leadership and enhancing communication and governance, which could indirectly influence transport policy. However, without direct references to transport, her views on this topic remain unspecified in the provided extract.",
+        "url": "https://election2025.gg/candidates/browse/nikki-symons/"
+      },
+      {
+        "name": "Lee Van Katwyk",
+        "text": "Lee Van Katwyk's manifesto does not explicitly address transport policies. His focus is primarily on government reform, economic revival, housing, education, pensioners, and youth support. If transport is a concern, further clarification or discussion with him would be necessary to understand his views on this topic.",
+        "url": "https://election2025.gg/candidates/browse/lee-van-katwyk/"
+      },
+      {
+        "name": "Simon Vermeulen",
+        "text": "Simon Vermeulen emphasizes the importance of improving transport connectivity for Guernsey. He highlights the successful enhancement of sea connectivity through the awarding of the ferry tender to Brittany Ferries, ensuring daily sailings to France and improved links with Jersey. Vermeulen also stresses the need for greater resilience and reliability in air connectivity, advocating for a stronger airline mandate and progress on key infrastructure projects like EMAS and a future-focused runway strategy. These efforts are part of his broader vision to build a resilient, diverse economy and ensure sustainable prosperity for Guernsey.",
+        "url": "https://election2025.gg/candidates/browse/simon-vermeulen/"
+      },
+      {
+        "name": "Steven Wall",
+        "text": "Steven Wall's manifesto does not explicitly address transport policies. His main priorities focus on employment, housing, healthcare, fiscal responsibility, and climate resilience.",
+        "url": "https://election2025.gg/candidates/browse/steven-wall/"
+      },
+      {
+        "name": "Steve Williams",
+        "text": "Steve Williams' views on transport focus on improving air connectivity for Guernsey. He acknowledges that the current reliability and cost of air travel are inadequate and suggests action to enhance the situation. This includes expanding the market to involve other airlines and conducting a realistic appraisal of options for extending the airport runway.",
+        "url": "https://election2025.gg/candidates/browse/steve-williams/"
+      },
+      {
+        "name": "Art Allen",
+        "text": "Candidate Art Allen expresses support for implementing EMAS (Engineered Materials Arrestor System) at the airport to enhance safety for aircraft, such as Boeing 737s and Airbus A321s, without extending the runway. He acknowledges concerns about the airport operating at a loss and opposes the idea of boat owners being penalized to fund the airport, as it would not foster unity among voters. Allen also highlights the rising costs of air travel, making it difficult for families to afford holidays, which he sees as a broader issue of people working to survive rather than live comfortably.",
+        "url": "https://election2025.gg/candidates/browse/art-allen-o-leary/"
+      },
+      {
+        "name": "Chris Blin",
+        "text": "Chris Blin's views on transport are not explicitly detailed in the provided extract. However, he mentions the importance of communication and engagement with the public, which could imply a focus on ensuring that transport policies are well-communicated and understood by the electorate. Additionally, he discusses the impact of policies on the island's infrastructure, such as ferry services, and expresses concern about potential negative impacts on tourism due to new travel requirements. This suggests he may be attentive to how transport policies affect the island's connectivity and economy.",
+        "url": "https://election2025.gg/candidates/browse/chris-blin/"
+      },
+      {
+        "name": "Garry Collins",
+        "text": "Garry Collins did not explicitly address transport policy in the provided extract. The focus was primarily on other issues such as governance, taxation, housing, and social services.",
+        "url": "https://election2025.gg/candidates/browse/garry-collins/"
+      },
+      {
+        "name": "Sarah Hansmann Rouxel",
+        "text": "Sarah Hansmann Rouxel's main policy points on transport focus on the Integrated Transport Strategy. She highlights that although it remains official government policy, it has not been effectively implemented due to its unpopularity and resistance from certain committees, such as Home Affairs, which have been reluctant to enforce measures. She emphasizes the need for a holistic approach to governance, criticizing the siloed nature of committees that leads to opposition within the government itself. Rouxel advocates for a more cohesive and focused implementation of policies to ensure that government resources are not wasted and that public understanding and support are secured.",
+        "url": "https://election2025.gg/candidates/browse/sarah-hansmann-rouxel/"
+      },
+      {
+        "name": "Rob Harnish",
+        "text": "Rob Harnish emphasizes the need for an effective and integrated transport strategy in Guernsey. He highlights the importance of community transport, particularly for individuals who have lost their driver's licenses due to aging or disabilities. Harnish advocates for improving the accessible taxi service, which currently provides around 10,000 passenger journeys per year for people with disabilities, but notes that it is insufficient. He stresses the need for better coordination among various charities providing transport services to increase efficiency and reduce social isolation. Harnish also points out the environmental benefits of community transport, such as reducing emissions and traffic levels. He calls for a more agile and flexible approach to transport solutions, leveraging third-sector organizations to enhance service delivery without significant additional costs.",
+        "url": "https://election2025.gg/candidates/browse/rob-harnish/"
+      },
+      {
+        "name": "Neil Inder",
+        "text": "Neil Inder's main policy points on transport include the successful appointment of Brittany Ferries as the provider of services to Guernsey. He highlights the importance of connectivity for the island, noting that tourism, which accounts for about 3% of the economy, plays a crucial role in maintaining transport links by keeping aircraft and boats operational. Inder emphasizes the need for sustainable development along the east coast and supports infrastructure projects that enhance transportation and connectivity.",
+        "url": "https://election2025.gg/candidates/browse/neil-inder/"
+      },
+      {
+        "name": "Stuart Jehan",
+        "text": "The provided extract does not contain any specific information or policy points made by candidate Stuart Jehan on the topic of transport.",
+        "url": "https://election2025.gg/candidates/browse/stuart-jehan/"
+      },
+      {
+        "name": "Andy Le Lievre",
+        "text": "The extract does not provide specific information on Andy Le Lievre's policy views regarding transport. It primarily focuses on housing issues, social welfare, and economic considerations.",
+        "url": "https://election2025.gg/candidates/browse/andrew-le-lievre/"
+      },
+      {
+        "name": "Jonathan Le Tocq",
+        "text": "Jonathan Le Tocq expressed disappointment regarding the breakdown of the ferry tender process between Guernsey and Jersey, noting that while it started well, it did not end as desired. He mentioned that the agreement allowed for the possibility of going separate ways if disagreements arose, which ultimately happened. Le Tocq also discussed the need for improvements to Alderney's runway, emphasizing that it should be upgraded to avoid continuous patching and unnecessary expenditure.",
+        "url": "https://election2025.gg/candidates/browse/jonathan-le-tocq/"
+      },
+      {
+        "name": "Paul Luxon",
+        "text": "The extract provided does not contain specific policy points made by candidate Paul Luxon on the topic of transport. The discussion primarily focuses on economic issues, public finance, tax policies, housing, and governance, but does not address transport-related policies or proposals.",
+        "url": "https://election2025.gg/candidates/browse/paul-luxon/"
+      },
+      {
+        "name": "Carl Meerveld",
+        "text": "The extract does not provide specific policy points made by candidate Carl Meerveld on the topic of transport. The focus is primarily on electoral systems, government functioning, taxation, and housing issues.",
+        "url": "https://election2025.gg/candidates/browse/carl-meerveld/"
+      },
+      {
+        "name": "Charles Parkinson",
+        "text": "Charles Parkinson's main policy points on transport focus on improving Guernsey's connectivity for both business and tourism. He emphasizes the need for strategic connections, particularly advocating for a direct link to Heathrow to enhance international business travel and support the finance industry. Parkinson highlights the limitations of the current Gatwick service and suggests that a Heathrow connection would provide better onward connectivity. He also supports considering an extension of Guernsey's runway to accommodate larger aircraft like the Airbus A320, which could attract more airlines and improve competitiveness. Additionally, he acknowledges Aurigny's recent progress in establishing partnerships with airlines like Emirates and British Airways, which he views positively. Overall, Parkinson's transport policy aims to improve Guernsey's accessibility and support economic growth by enhancing air travel options.",
+        "url": "https://election2025.gg/candidates/browse/charles-parkinson/"
+      },
+      {
+        "name": "Andy Sloane",
+        "text": "Andy Sloane's main policy point on transport focuses on addressing issues with air links in Guernsey. He emphasizes the need for collaboration among states members to find effective solutions for improving air connectivity. Sloane highlights the importance of public engagement and consensus in policy-making, suggesting that a lack of transparency and accountability has hindered progress in this area. He advocates for a system that encourages open communication and collective decision-making to enhance transport infrastructure.",
+        "url": "https://election2025.gg/candidates/browse/andy-sloan/"
+      },
+      {
+        "name": "Simon Vermeulen",
+        "text": "Simon Vermeulen's main policy points on transport include:\n\n1. **Sea Links**: He highlights the success in securing Brittany Ferries for sea links and the partnership with Islands Unlimited for daily trips to Jersey, emphasizing reliability and affordability.\n\n2. **Air Links**: Vermeulen advocates for improving air connectivity, particularly through a potential Heathrow link serviced by British Airways to enhance resilience and reliability. He suggests that more airlines flying into Guernsey would improve the island's connectivity and support the finance industry.\n\n3. **Runway Enhancements**: He discusses the possibility of using EMAS (Engineered Materials Arrestor System) to extend the runway's usability, which could allow larger planes to operate and improve safety.\n\nOverall, Vermeulen focuses on enhancing Guernsey's transport infrastructure to boost economic development and improve connectivity for residents and businesses.",
+        "url": "https://election2025.gg/candidates/browse/simon-vermeulen/"
+      },
+      {
+        "name": "Chris Blin",
+        "text": "Chris Blin did not explicitly address transport policies in the provided extract. His focus was primarily on economic growth, housing, planning, offshore wind development, and taxation.",
+        "url": "https://election2025.gg/candidates/browse/chris-blin/"
+      },
+      {
+        "name": "Tina Bury",
+        "text": "Tina Bury did not explicitly address transport policy in the provided extract. Her focus was on broader issues such as housing, taxation, and economic growth, but there were no specific mentions or policy points related to transport.",
+        "url": "https://election2025.gg/candidates/browse/tina-bury/"
+      },
+      {
+        "name": "John Dyke",
+        "text": "John Dyke's main policy points on transport focus on addressing issues with Guernsey's connectivity and infrastructure. He highlights significant problems with the island's airport and airline services, noting that they are both expensive and unreliable, which negatively impacts the finance sector by hindering the movement of people for business meetings. Dyke emphasizes the need for adjustments to the runway and improvements in airline connectivity as high priorities. Additionally, he mentions the potential of offshore wind farms as a source of rental income from the seabed, although this is not directly related to transport infrastructure.",
+        "url": "https://election2025.gg/candidates/browse/john-dyke/"
+      },
+      {
+        "name": "Kerensa Gardner",
+        "text": "The extract does not provide specific information on Kerensa Gardner's policy views regarding transport.",
+        "url": "https://election2025.gg/candidates/browse/kerensa-gardner/"
+      },
+      {
+        "name": "Marc Leadbeater",
+        "text": "Marc Leadbeater's views on transport are not explicitly detailed in the provided extract. The text primarily focuses on other issues such as housing, population management, justice policy, and economic growth. Therefore, no specific transport policy points can be extracted from this content.",
+        "url": "https://election2025.gg/candidates/browse/marc-leadbeater/"
+      },
+      {
+        "name": "Aidan Matthews",
+        "text": "Aidan Matthews emphasizes the importance of improving connectivity for transport in Guernsey to support business growth and tourism. He argues that efficient transport links, such as reliable planes and ferries, are crucial for enabling business operations and attracting tourism. Matthews suggests that without proper transport infrastructure, businesses may choose to operate elsewhere where connectivity is better.",
+        "url": "https://election2025.gg/candidates/browse/aidan-matthews/"
+      },
+      {
+        "name": "Charles Parkinson",
+        "text": "Based on the provided extract, there are no specific policy points or views mentioned by candidate Charles Parkinson concerning transport.",
+        "url": "https://election2025.gg/candidates/browse/charles-parkinson/"
+      }
+    ]
   },
   "gst": [
     {
