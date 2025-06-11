@@ -2,7 +2,6 @@ import os
 import re
 import json
 import pickle
-import re
 from collections import defaultdict
 import openai
 from flask import Flask, request, jsonify
@@ -104,6 +103,13 @@ Summary:"""
         print(f"⚠️ GPT fallback error: {e}")
         return text.strip().split("\n")[0][:400] + "..."
 
+# candidate URLS
+
+def candidate_url(name):
+    """Generate a candidate profile URL slug from name"""
+    slug = name.strip().lower().replace(" ", "-")
+    return f"https://election2025.gg/candidates/{slug}"
+
 # Last-resort keyword matcher using embeddings.csv
 def last_resort_keyword_summary(query, df, fallback_topic=None, top_n=3):
     if fallback_topic is None:
@@ -138,17 +144,35 @@ def last_resort_keyword_summary(query, df, fallback_topic=None, top_n=3):
 
     return {"candidates": results}
 
+def candidates_with_little_on_topic(df, topic, aliases, min_mentions=1):
+    topic_keywords = aliases.get(topic, [topic])
+    topic_keywords = [kw.lower() for kw in topic_keywords]
+
+    counts = defaultdict(int)
+    for _, row in df.iterrows():
+        name = row.get("name", "").strip()
+        text = str(row.get("Text", "")).lower()
+        if any(keyword in text for keyword in topic_keywords):
+            counts[name] += 1
+
+    all_candidates = set(df["name"].dropna().unique())
+    low_mention_candidates = [
+        {
+            "name": name,
+            "summary": f"No substantial mention of {topic}.",
+            "url": candidate_url(name)
+        }
+        for name in all_candidates if counts[name] < min_mentions
+    ]
+
+    return {"candidates": low_mention_candidates}
+
 # Save updated topic cache
 def save_topic_cache():
     with open(cache_file, "w") as f:
         json.dump(topic_response_cache, f, indent=2)
 
-# candidate URLS
 
-def candidate_url(name):
-    """Generate a candidate profile URL slug from name"""
-    slug = name.strip().lower().replace(" ", "-")
-    return f"https://election2025.gg/candidates/{slug}"
 
 # Topic normalized
 
@@ -217,6 +241,27 @@ def chat():
 
                 log_query_console(query, response, matched_topic=topic, response_type="stance_gst")
                 return jsonify({"response": response})
+
+        # --- Detect "who talks little about..." questions ---
+        low_mention_match = re.search(
+            r"(which|who)\s+(candidates\s+)?(don'?t|do not|rarely|barely|seldom).*?(talk|mention|say).*?\b(about|on)?\b\s+(.+)",
+            cleaned_query
+        )
+
+        if low_mention_match:
+            raw_topic = low_mention_match.group(6).strip()
+            raw_topic = raw_topic.strip().lower()
+            topic = detect_topic_from_query(raw_topic, aliases)
+
+            if topic:
+                topic = normalize_topic(topic)
+            else:
+                topic = raw_topic  # fallback to raw topic if detection fails
+            print(f"🔎 Detected low-mention topic: {topic}")
+
+            response = candidates_with_little_on_topic(df, topic, aliases)
+            log_query_console(query, response, matched_topic=topic, response_type="low_mention_query")
+            return jsonify({"response": response})
 
         # --- General topic summary ---
         summary_keywords = [
