@@ -73,7 +73,8 @@ def log_query_console(query, response, matched_topic=None, response_type="info")
 def extract_keywords(query):
     stopwords = set([
         "what", "does", "do", "say", "think", "about", "on", "the", "is",
-        "candidates", "candidate", "view", "views", "opinions", "are", "their", "position", "them", "who", "which"
+        "candidates", "candidate", "view", "views", "opinions", "are", "their", "position",
+        "they"  # ✅ Now included
     ])
     tokens = re.findall(r"\b\w+\b", query.lower())
     return [word for word in tokens if word not in stopwords]
