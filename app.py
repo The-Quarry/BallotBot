@@ -130,7 +130,13 @@ def last_resort_keyword_summary(query, df, fallback_topic=None, top_n=3):
             matches[candidate].append(row)
 
     if not matches:
-        return {"message": "Sorry, I couldn't find relevant information on that topic."}
+        return {
+            "candidates": [{
+                "name": "Info",
+                "summary": "Sorry, I couldn't find relevant information on that topic.",
+                "source_url": ""
+            }]
+        }
 
     results = []
     for candidate, entries in matches.items():
@@ -139,7 +145,7 @@ def last_resort_keyword_summary(query, df, fallback_topic=None, top_n=3):
         results.append({
             "name": candidate,
             "summary": summary,
-            "url": candidate_url(candidate)
+            "source_url": candidate_url(candidate)
         })
 
     return {"candidates": results}
@@ -160,7 +166,7 @@ def candidates_with_little_on_topic(df, topic, aliases, min_mentions=1):
         {
             "name": name,
             "summary": f"No substantial mention of {topic}.",
-            "url": candidate_url(name)
+            "source_url": candidate_url(name)
         }
         for name in all_candidates if counts[name] < min_mentions
     ]
@@ -296,22 +302,33 @@ def chat():
                 return jsonify({"response": response_data})
 
             chunks = topic_chunks.get(topic, [])
-            if chunks:
-                if len(chunks) > 40:
-                    warning = {"message": f"Topic '{topic}' includes too many candidate sources to summarise right now. Please try a more specific query."}
-                    log_query_console(query, warning, matched_topic=topic, response_type="topic_too_large")
-                    return jsonify({"response": warning})
+            if len(chunks) > 40:
+                # Attempt sub-filtering based on the user's original query
+                keywords = extract_keywords(cleaned_query)
+                filtered_chunks = [chunk for chunk in chunks if any(k in chunk["text"].lower() for k in keywords)]
 
-                response = {"candidates": summarize_topic_by_candidate(topic, chunks)}
-                topic_response_cache[topic] = response
-                save_topic_cache()
-                log_query_console(query, response, matched_topic=topic, response_type="candidate_chunk_match")
-                return jsonify({"response": response})
-            else:
-                print(f"🧭 No chunks found for topic '{topic}' – falling back to embeddings-based keyword summary.")
-                keyword_summary = last_resort_keyword_summary(query, df, fallback_topic=topic)
-                log_query_console(query, keyword_summary, matched_topic=topic, response_type="keyword_gpt_summary")
-                return jsonify({"response": keyword_summary})
+                if filtered_chunks:
+                    try:
+                        gpt_summary = summarize_topic_with_gpt(topic, filtered_chunks)
+                        response_data = {
+                            "candidates": gpt_summary,
+                            "topic": topic
+                        }
+                        log_query_console(query, response_data, matched_topic=topic, response_type="gpt_filtered_summary")
+                        return jsonify({"response": response_data})
+                    except Exception as e:
+                        log_query_console(query, f"⚠️ GPT filtered summary failed: {e}", matched_topic=fallback_topic, response_type="gpt_error")
+
+                # Fallback if no relevant chunks
+                warning = {
+                    "candidates": [{
+                        "name": "Note",
+                        "summary": f"The topic '{fallback_topic}' includes too many sources to summarize. Try a more specific question (e.g., 'active travel in transport').",
+                        "source_url": ""
+                    }]
+                }
+                log_query_console(query, warning, matched_topic=fallback_topic, response_type="fallback_topic_too_large")
+                return jsonify({"response": warning})
 
 
         # --- Fallback: single candidate on topic ---
@@ -330,7 +347,7 @@ def chat():
             response_data = {
                 "candidates": [{
                     "name": candidate_name,
-                    "url": candidate_url(candidate_name),
+                    "source_url": candidate_url(candidate_name),
                     "summary": summary_text
                 }],
                 "topic": topic
@@ -355,14 +372,20 @@ def chat():
                         "candidates": [{
                             "name": chunk['name'],
                             "summary": chunk['text'],
-                            "url": candidate_url(chunk['name'])
+                            "source_url": candidate_url(chunk['name'])
                         }]
                     }
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_short_form_match")
                     return jsonify({"response": response})
 
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_short_match")
-            return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
+            return jsonify({"response": {
+                "candidates": [{
+                    "name": candidate_name,
+                    "summary": f"No specific statement found on {topic}.",
+                    "source_url": candidate_url(candidate_name)
+                }]
+            }})
 
         # --- Fallback: more complex phrasing ---
         candidate_topic_match = re.search(
@@ -384,7 +407,7 @@ def chat():
                         "candidates": [{
                             "name": chunk['name'],
                             "summary": chunk['text'],
-                            "url": candidate_url(chunk['name'])
+                            "source_url": candidate_url(chunk['name'])
                         }]
                     }
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
@@ -403,7 +426,13 @@ def chat():
 
             if chunks:
                 if len(chunks) > 40:
-                    warning = {"message": f"The topic '{fallback_topic}' includes too many sources to summarize directly. Please try a more specific question (e.g., 'special needs in schools')."}
+                    warning = {
+                        "candidates": [{
+                            "name": "Note",
+                            "summary": f"The topic '{fallback_topic}' includes too many sources to summarize directly. Please try a more specific question (e.g., 'special needs in schools').",
+                            "source_url": ""
+                        }]
+                    }
                     log_query_console(query, warning, matched_topic=fallback_topic, response_type="fallback_topic_too_large")
                     return jsonify({"response": warning})
 
@@ -430,7 +459,13 @@ def chat():
         return jsonify({"response": keyword_summary})
 
         # --- Final fallback ---
-        fallback_message = "I'm really sorry, I can't answer that question. Please try again by referring to a candidate and topic area."
+        fallback_message = {
+            "candidates": [{
+                "name": "Info",
+                "summary": "I'm really sorry, I can't answer that question. Please try again by referring to a candidate and topic area.",
+                "source_url": ""
+            }]
+        }
         log_query_console(query, fallback_message, response_type="unrecognized_format")
         return jsonify({"response": fallback_message})
 
