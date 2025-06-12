@@ -180,8 +180,8 @@ for query, result in st.session_state.chat_history:
                 st.markdown("### ✅ These candidates match your stance:")
                 for i, item in enumerate(result["primary"]):
                     name = item.get("name", "Unknown")
-                    text = item.get("summary", "No statement available")
-                    url = item.get("source_url", "")
+                    text = item.get("summary") or item.get("text", "No statement available")
+                    url = item.get("source_url", "") or item.get("url", "")
                     name_md = f"[**{name}**]({url})" if url else f"**{name}**"
                     st.markdown(f"{name_md}: {text}")
 
@@ -195,8 +195,8 @@ for query, result in st.session_state.chat_history:
                     with st.expander("💡 See what the others say"):
                         for item in result["alternate"]:
                             name = item.get("name", "Unknown")
-                            text = item.get("summary", "No statement available")
-                            url = item.get("source_url", "")
+                            text = item.get("summary") or item.get("text", "No statement available")
+                            url = item.get("source_url", "") or item.get("url", "")
                             name_md = f"[**{name}**]({url})" if url else f"**{name}**"
                             st.markdown(f"{name_md}: {text}")
 
@@ -204,8 +204,8 @@ for query, result in st.session_state.chat_history:
                 st.markdown("### 👤 Candidate summary:")
                 for i, item in enumerate(result["candidates"]):
                     name = item.get("name", "Unknown")
-                    text = item.get("summary", "No statement available")
-                    url = item.get("url", "")
+                    text = item.get("summary") or item.get("text", "No statement available")
+                    url = item.get("source_url", "") or item.get("url", "")
                     name_md = f"[**{name}**]({url})" if url else f"**{name}**"
                     st.markdown(f"{name_md}: {text}")
 
@@ -254,7 +254,7 @@ with st.expander("✅ Your Saved Candidates", expanded=False):
     if st.session_state.liked_responses:
         for item in st.session_state.liked_responses:
             name = item.get("name", "Unknown")
-            url = item.get("source_url", "")
+            url = item.get("source_url") or item.get("url", "")
             name_md = f"[**{name}**]({url})" if url else f"**{name}**"
             st.markdown(f"- {name_md}")
     else:

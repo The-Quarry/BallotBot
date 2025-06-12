@@ -247,7 +247,10 @@ def chat():
                 }
 
                 log_query_console(query, response, matched_topic=topic, response_type="stance_gst")
-                return jsonify({"response": response})
+                return jsonify({
+                    "response": response,
+                    "type": "stance_gst"
+                })
 
         # --- Detect "who talks little about..." questions ---
         low_mention_match = re.search(
@@ -268,7 +271,10 @@ def chat():
 
             response = candidates_with_little_on_topic(df, topic, aliases)
             log_query_console(query, response, matched_topic=topic, response_type="low_mention_query")
-            return jsonify({"response": response})
+            return jsonify({
+                "response": response,
+                "type": "low_mention_query"
+            })
 
         # --- General topic summary ---
         summary_keywords = [
@@ -300,7 +306,10 @@ def chat():
                     response_data = {"candidates": response_data}                 
 
                 log_query_console(query, response_data, matched_topic=topic, response_type="cached_topic_summary")
-                return jsonify({"response": response_data})
+                return jsonify({
+                    "response": response_data,
+                    "type": "cached_topic_summary"
+                })
 
             chunks = topic_chunks.get(topic, [])
             if len(chunks) > 40:
@@ -316,7 +325,10 @@ def chat():
                             "topic": topic
                         }
                         log_query_console(query, response_data, matched_topic=topic, response_type="gpt_filtered_summary")
-                        return jsonify({"response": response_data})
+                        return jsonify({
+                            "response": response_data,
+                            "type": "gpt_filtered_summary"
+                        })
                     except Exception as e:
                         log_query_console(query, f"⚠️ GPT filtered summary failed: {e}", matched_topic=fallback_topic, response_type="gpt_error")
 
@@ -355,7 +367,10 @@ def chat():
             }
 
             log_query_console(query, response_data, matched_topic=topic, response_type="generated_topic_summary")
-            return jsonify({"response": response_data})
+            return jsonify({
+                "response": response_data,
+                "type": "generated_topic_summary"
+            })
 
         # --- Fallback: "[Candidate] on [Topic]" style query ---
         short_form_match = re.match(r"^([\w\s\-']+?)\s+on\s+([\w\s\-']+)$", cleaned_query)
@@ -372,21 +387,27 @@ def chat():
                     response = {
                         "candidates": [{
                             "name": chunk['name'],
-                            "summary": chunk['text'],
+                            "summary": chunk.get('summary') or chunk.get('text', ''),
                             "source_url": candidate_url(chunk['name'])
                         }]
                     }
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_short_form_match")
-                    return jsonify({"response": response})
+                    return jsonify({
+                        "response": response,
+                        "type": "fallback_short_form_match"
+                    })
 
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_short_match")
-            return jsonify({"response": {
-                "candidates": [{
-                    "name": candidate_name,
-                    "summary": f"No specific statement found on {topic}.",
-                    "source_url": candidate_url(candidate_name)
-                }]
-            }})
+            return jsonify({
+                "response": {
+                    "candidates": [{
+                        "name": candidate_name,
+                        "summary": f"No specific statement found on {topic}.",
+                        "source_url": candidate_url(candidate_name)
+                    }]
+                },
+                "type": "no_short_match"
+            })
 
         # --- Fallback: more complex phrasing ---
         candidate_topic_match = re.search(
@@ -407,15 +428,27 @@ def chat():
                     response = {
                         "candidates": [{
                             "name": chunk['name'],
-                            "summary": chunk['text'],
+                            "summary": chunk.get('summary') or chunk.get('text', ''),
                             "source_url": candidate_url(chunk['name'])
                         }]
                     }
                     log_query_console(query, response, matched_topic=topic, response_type="fallback_direct_match")
-                    return jsonify({"response": response})
+                    return jsonify({
+                        "response": response,
+                        "type": "fallback_direct_match"
+                    })
 
             log_query_console(query, f"No specific statement found for {candidate_name} on {topic}.", matched_topic=topic, response_type="no_candidate_match")
-            return jsonify({"response": f"No specific statement found for {candidate_name} on {topic}."})
+            return jsonify({
+                "response": {
+                    "candidates": [{
+                        "name": candidate_name,
+                        "summary": f"No specific statement found on {topic}.",
+                        "source_url": candidate_url(candidate_name)
+                    }]
+                },
+                "type": "no_candidate_match"
+            })
 
        
         # --- Last-resort: keyword-based GPT summary ---
@@ -435,7 +468,10 @@ def chat():
                         }]
                     }
                     log_query_console(query, warning, matched_topic=fallback_topic, response_type="fallback_topic_too_large")
-                    return jsonify({"response": warning})
+                    return jsonify({
+                        "response": warning,
+                        "type": "fallback_topic_too_large"
+                    })
 
                 try:
                     gpt_summary = summarize_topic_with_gpt(fallback_topic, chunks)
@@ -444,7 +480,10 @@ def chat():
                         "topic": fallback_topic
                     }
                     log_query_console(query, response_data, matched_topic=fallback_topic, response_type="gpt_fallback_summary")
-                    return jsonify({"response": response_data})
+                    return jsonify({
+                        "response": response_data,
+                        "type": "gpt_fallback_summary"
+                    })
                 except Exception as e:
                     log_query_console(query, f"⚠️ GPT fallback failed: {e}", matched_topic=fallback_topic, response_type="gpt_error")
             else:
@@ -459,21 +498,15 @@ def chat():
         log_query_console(query, keyword_summary, matched_topic="unknown", response_type="keyword_fulltext_summary")
         return jsonify({"response": keyword_summary})
 
-        # --- Final fallback ---
-        fallback_message = {
-            "candidates": [{
-                "name": "Info",
-                "summary": "I'm really sorry, I can't answer that question. Please try again by referring to a candidate and topic area.",
-                "source_url": ""
-            }]
-        }
-        log_query_console(query, fallback_message, response_type="unrecognized_format")
-        return jsonify({"response": fallback_message})
+    
 
     except Exception as e:
         error_message = f"An error occurred: {e}"
         log_query_console(query, error_message, response_type="exception")
-        return jsonify({"response": error_message}), 500
+        return jsonify({
+            "response": error_message,
+            "type": "exception"
+        }), 500
        
 
     
