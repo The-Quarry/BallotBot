@@ -15,6 +15,7 @@ aliases = {
     "economy": ["growth", "the economy", "GDP", "finance industry", "entrepeneur", "business", "tourism", "wind farm", "the economy", "finance"],
     "arts": ["art", "culture", "arts commission", "cultural", "creative", "creatives", "museum", "museums", "heritage", "music", "St James"],
     "sport": ["sports", "sports commission", "active8", "active 8", "footes lane", "activity", "outdoor", "phsyical", "sports tourism", "beau sejour", "sports development"],
+    "pensions": ["pensions", "pensioners", "OAP", "OAPs", "retirement", "retired people", "elderly", "old age"],
     "send": ["special educational needs", "send", "additional needs", "learning support", "SEND"],
 }
 
